@@ -57,7 +57,7 @@ export default function SidebarNavLink({
                 <Link
                   to={{
                     pathname: childLink.href,
-                    search: `category=${childLink.discipline}`,
+                    search: `discipline=${childLink.discipline}`,
                   }}
                   onClick={handleClick}
                 >

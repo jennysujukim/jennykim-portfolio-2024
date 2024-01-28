@@ -10,9 +10,10 @@ export default function SidebarNav() {
     { href: "/", text: "Home", isExternal: false },
     { href: "/about", text: "About", isExternal: false },
     { href: "/projects", text: "Projects", isExternal: false, childLinks: [
-      { text: DisciplineType.Frontend, href: "/projects", discipline: DisciplineType.Frontend },
-      { text: DisciplineType.UIUX, href: "/projects", discipline: DisciplineType.UIUX },
-      { text: DisciplineType.Graphic, href: "/projects", discipline: DisciplineType.Graphic },
+      { text: DisciplineType.All, href: "/projects", discipline: "all" },
+      { text: DisciplineType.Frontend, href: "/projects", discipline: "frontend-development" },
+      { text: DisciplineType.UIUX, href: "/projects", discipline: "uiux-design" },
+      { text: DisciplineType.Graphic, href: "/projects", discipline: "graphic-design" },
     ] },
   ]
 
