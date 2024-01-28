@@ -8,9 +8,11 @@ export const getProjectsData = (category: DisciplineType) => {
   const projectsData = {
     [DisciplineType.All]: () => {
       return {
-        ...projectsData[DisciplineType.Frontend](),
-        ...projectsData[DisciplineType.UIUX](),
-        ...projectsData[DisciplineType.Graphic](),
+        projects: [
+          ...projectsData[DisciplineType.Frontend]().projects,
+          ...projectsData[DisciplineType.UIUX]().projects,
+          ...projectsData[DisciplineType.Graphic]().projects,
+        ]
       }
     },
     [DisciplineType.Frontend]: () => {
@@ -439,7 +441,7 @@ export const getProjectsData = (category: DisciplineType) => {
   if(projectsData[category]){
     data = projectsData[category];
   } else {
-    data = projectsData[DisciplineType.None];
+    data = projectsData[DisciplineType.All];
   }
 
   return data();

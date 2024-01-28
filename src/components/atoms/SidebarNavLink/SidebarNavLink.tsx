@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom'
+import { DisciplineType } from '../../../types/enums/DisciplineType';
 import { useSidebarContext } from '../../../hooks/useSidebarContext'
+import { useGetProjectsDataContext } from '../../../hooks/useGetProjectsDataContext'
 // styles
 
 type SidebarNavLinkProps = {
   href: string;
   text: string;
-  isExternal: boolean;
+  isExternal?: boolean;
   childLinks?: {
     text: string;
     href: string;
-    discipline?: string;
+    discipline: DisciplineType;
   }[];
+  // handleChildLinkClick: (discipline: DisciplineType) => void;
 }
 
 export default function SidebarNavLink({
@@ -20,15 +23,23 @@ export default function SidebarNavLink({
   childLinks }: SidebarNavLinkProps) {
 
   const { setIsOpen } = useSidebarContext()
+  const { handleClickToSetData } = useGetProjectsDataContext()
 
-  const handleClick = () => setIsOpen(false)
+  const handleExternalLinkClick = () => {
+    setIsOpen(false)
+  }
+
+  const handleChildLinkClick = (discipline: DisciplineType) => {
+    setIsOpen(false)
+    handleClickToSetData(discipline)
+  }
 
   return (
     <li>
       {isExternal ? (
         <a 
           href={href} 
-          onClick={handleClick} 
+          onClick={handleExternalLinkClick} 
           target="_blank"
         >
           {text}
@@ -36,7 +47,7 @@ export default function SidebarNavLink({
       ) : (
         <Link 
           to={href}
-          onClick={handleClick}
+          onClick={text === 'Projects' ? () => handleChildLinkClick(DisciplineType.All) : () => handleChildLinkClick(DisciplineType.None)}
         >
           {text}
         </Link>
@@ -45,25 +56,12 @@ export default function SidebarNavLink({
         <ul>
           {childLinks.map((childLink, index) => (
             <li key={index}>
-              {isExternal ? (
-                <a 
-                  href={childLink.href}
-                  onClick={handleClick}
-                  target='_blank'
-                >
-                  {childLink.text}
-                </a>
-              ) : (
-                <Link
-                  to={{
-                    pathname: childLink.href,
-                    search: `category=${childLink.discipline}`,
-                  }}
-                  onClick={handleClick}
-                >
-                  {childLink.text}
-                </Link>
-              )}
+              <Link
+                to={childLink.href}
+                onClick={() => handleChildLinkClick(childLink.discipline)}
+              >
+                {childLink.text}
+              </Link>
             </li>
           ))}
         </ul>
