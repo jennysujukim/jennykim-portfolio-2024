@@ -8,4 +8,7 @@ export default {
   sidebarHeightOpen: 500,
   sidebarWidth: 68,
   sidebarWidthOpen: 320,
+  sidebarBtnHeight: 24,
+
+  logoHeight_lap: 80,
 }

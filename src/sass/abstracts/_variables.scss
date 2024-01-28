@@ -48,22 +48,31 @@ $container_spacing_mob: 1rem;
 $container_spacing_tab: 1.5rem;
 $container_spacing_lap: 2rem;
 
+$section_spacing_lap: 3rem;
 
+$gap_tab: 1.5rem;
+$gap_lap: 4rem;
+
+$display_gap_lap: 2rem;
 
 $p-vp-mob: 2rem 1rem;
 $p-vp-tab: 4rem 1.5rem;
 $p-vp-lap: 2rem;
-$gap-tab: 1.5rem;
-$gap-lap: 4rem;
+
 $m-ProjectCard-img-mob: 0.5rem;
 $m-ProjectCard-img-tab: 1rem;
 
 // DIMENSIONS //
 $NavBar-height-mob: 60px;
-$navBar_width_lap: 68px;
-$MainContent-left-width-lap: calc((100vw - (4rem + $navBar_width_lap + $gap-lap)) * 0.3 ); // 4rem = padding of laptop screen wrapper
-$MainContent-right-width-lap: calc((100vw - (4rem + $navBar_width_lap + $gap-lap)) * 0.7 ); // 4rem = padding of laptop screen wrapper
-$MainContent-width-lap: calc(100vw - $navBar_width_lap);
+$sidebar_width_lap: 68px;
+
+$stickyContainer_width_lap: 300px;
+
+
+
+$MainContent-left-width-lap: calc((100vw - (4rem + $sidebar_width_lap + $gap-lap)) * 0.3 ); // 4rem = padding of laptop screen wrapper
+$MainContent-right-width-lap: calc((100vw - (4rem + $sidebar_width_lap + $gap-lap)) * 0.7 ); // 4rem = padding of laptop screen wrapper
+$MainContent-width-lap: calc(100vw - $sidebar_width_lap);
 
 // SOLID BORDER //
 $border_primary_black: 1px solid $primary_black;

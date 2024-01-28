@@ -1,0 +1,25 @@
+@use '../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include lap {
+    @include flexbox(unset, unset);
+    gap: $display_gap_lap;
+  }
+}
+
+.Sticky_Cont {
+  @include lap {
+    position: -webkit-sticky;
+    position: sticky;
+    width: $stickyContainer_width_lap;
+    height: fit-content;
+    top: 0;
+  }
+}
+
+.Scroll_Cont {
+  @include lap {
+    flex: 1;
+    height: 200vh;
+  }
+}

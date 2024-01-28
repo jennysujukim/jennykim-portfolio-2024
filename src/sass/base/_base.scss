@@ -72,9 +72,17 @@ a {
   }
 }
 
+.Section {
+  @include lap {
+    padding: $section_spacing_lap 0;
+  }
+}
+
+
 .Line {
   @include solidLine($border_primary_black);
 
-  @include tab { margin-left: 1rem; }
-  &_Spacing { margin: 3rem 0; }
+  &_Spacing { 
+    @include solidLine($border_primary_black);
+    margin-left: 2rem; }
 }
