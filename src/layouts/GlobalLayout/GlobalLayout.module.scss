@@ -1,0 +1,25 @@
+@use '../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include flexbox(unset, unset);
+  position: relative;
+}
+
+.Header_Cont {
+  z-index: 200;
+  position: fixed;
+  bottom: 0;
+  @include lap { 
+    position: relative; 
+    margin-left: $container_spacing_lap;
+  };
+}
+
+.Main_Cont {
+  overflow: clip;
+  flex: 1;
+}
+
+.Footer_Cont {
+  
+}

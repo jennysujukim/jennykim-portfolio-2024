@@ -1,0 +1,22 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  z-index: 100;
+
+  @include lap {
+    @include flexbox(unset, unset, column);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: $navBar_width_lap;
+    height: 100vh;
+  }
+}
+
+.Container {
+  @include lap {
+    border: $border_primary_black;
+    height: 100%;
+    @include flexbox(space-between, center, column);
+  }
+}
