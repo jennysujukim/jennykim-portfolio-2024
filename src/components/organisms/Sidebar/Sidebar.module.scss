@@ -1,0 +1,54 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  z-index: 100;
+
+  @include lap {
+    @include flexbox(unset, unset, column);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: $sidebar_width_lap;
+    height: 100vh;
+  }
+}
+
+.Container {
+  @include lap {
+    border: $border_primary_black;
+    height: 100%;
+    @include flexbox(unset, center);
+  }
+}
+
+.Btns_Cont {
+  @include lap {
+    min-width: $sidebar_width_lap;
+    height: 100%;
+    @include flexbox(space-between, center, column);
+  }
+}
+
+.Submark_Cont {
+  @include lap { padding-top: 1rem; }
+}
+
+.MenuBtn_Cont {
+  @include lap {
+    height: fit-content;
+    @include absoluteCenterVertical(center);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+.ThemeBtn_Cont {
+  @include lap { padding-bottom: 1rem; };
+}

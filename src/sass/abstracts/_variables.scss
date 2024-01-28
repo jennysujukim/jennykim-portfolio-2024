@@ -1,0 +1,79 @@
+// COLOURS //
+$primary_white: #fffefa;
+$primary_black: #1d1d1d;
+$primary_grey: #ababab;
+$secondary_grey: #e0e0e0;
+
+// BREAKPOINTS //
+$breakpoints : (
+  "mobile": 320px,
+	"tablet": 600px,
+	"laptop": 1024px,
+	"desktop": 1200px,
+  "desktop-lg": 1920px
+);
+
+// FONT FAMILY //
+$helveticaNeue_light: 'HelveticaNeue-Light', sans-serif;
+$helveticaNeue_roman: 'HelveticaNeue-Roman', sans-serif;
+$helveticaNeue_medium: 'HelveticaNeue-Medium', sans-serif;
+$helveticaNeue_heavy: 'HelveticaNeue-Heavy', sans-serif;
+
+// FONT SIZES //
+$fs_h2_mob: 1.5rem;
+$fs_h2_tab: 2rem;
+$fs_h2_lap: 2.8rem;
+
+$fs_h3_mob: 1.25rem;
+$fs_h3_tab: 1.5rem;
+$fs_h3_lap: 1.75rem;
+
+$fs_h4_mob: 1rem;
+$fs_h4_tab: 1.1rem;
+$fs_h4_lap: 1.25rem;
+
+$fs_h5_mob: 1rem;
+$fs_h5_tab: 1.25rem;
+$fs_h5_lap: 1.25rem;
+
+$fs_h6_mob: 0.875rem;
+$fs_h6_tab: 1rem;
+$fs_h6_lap: 1rem;
+
+$fs_p_mob: 0.875rem;
+$fs_p_tab: 1rem;
+
+// SPACING //
+$container_spacing_mob: 1rem;
+$container_spacing_tab: 1.5rem;
+$container_spacing_lap: 2rem;
+
+$section_spacing_lap: 3rem;
+
+$gap_tab: 1.5rem;
+$gap_lap: 4rem;
+
+$display_gap_lap: 2rem;
+
+$p-vp-mob: 2rem 1rem;
+$p-vp-tab: 4rem 1.5rem;
+$p-vp-lap: 2rem;
+
+$m-ProjectCard-img-mob: 0.5rem;
+$m-ProjectCard-img-tab: 1rem;
+
+// DIMENSIONS //
+$NavBar-height-mob: 60px;
+$sidebar_width_lap: 68px;
+
+$stickyContainer_width_lap: 300px;
+
+
+
+$MainContent-left-width-lap: calc((100vw - (4rem + $sidebar_width_lap + $gap-lap)) * 0.3 ); // 4rem = padding of laptop screen wrapper
+$MainContent-right-width-lap: calc((100vw - (4rem + $sidebar_width_lap + $gap-lap)) * 0.7 ); // 4rem = padding of laptop screen wrapper
+$MainContent-width-lap: calc(100vw - $sidebar_width_lap);
+
+// SOLID BORDER //
+$border_primary_black: 1px solid $primary_black;
+$border_primary_white: 1px solid $primary_white;
