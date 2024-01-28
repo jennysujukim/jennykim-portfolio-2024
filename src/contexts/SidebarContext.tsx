@@ -4,6 +4,7 @@ type SidebarContextType = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleToggleState: () => void;
+  handleClose: () => void;
 };
 
 type SidebarContextProviderProps = {
@@ -14,6 +15,7 @@ const defaultContextValue: SidebarContextType = {
   isOpen: false,
   setIsOpen: () => {},
   handleToggleState: () => {},
+  handleClose: () => {}
 };
 
 export const SidebarContext = createContext(defaultContextValue);
@@ -29,8 +31,15 @@ export const SidebarContextProvider = ({ children }: SidebarContextProviderProps
     })
   }
 
+  const handleClose = () => setIsOpen(false);
+
   return (
-    <SidebarContext.Provider value={{ isOpen, setIsOpen, handleToggleState }}>
+    <SidebarContext.Provider value={{ 
+      isOpen, 
+      setIsOpen, 
+      handleToggleState,
+      handleClose
+    }}>
       {children}
     </SidebarContext.Provider>
   );

@@ -8,8 +8,7 @@ import styles from './GlobalLayout.module.scss'
 
 export default function GlobalLayout() {
 
-  const { setIsOpen } = useSidebarContext()
-  const handleCloseSidebar = () => setIsOpen(false)
+  const { handleClose } = useSidebarContext()
 
   return (
     <div className={styles.Wrapper}>
@@ -18,7 +17,7 @@ export default function GlobalLayout() {
       </header>
       <main
         className={`Container_X ${styles.Main_Cont}`}
-        onClick={handleCloseSidebar}
+        onClick={handleClose}
       >
         <Outlet />
         <footer className={styles.Footer_Cont}>

@@ -13,7 +13,6 @@ type SidebarNavLinkProps = {
     href: string;
     discipline: DisciplineType;
   }[];
-  // handleChildLinkClick: (discipline: DisciplineType) => void;
 }
 
 export default function SidebarNavLink({
@@ -22,15 +21,11 @@ export default function SidebarNavLink({
   isExternal,
   childLinks }: SidebarNavLinkProps) {
 
-  const { setIsOpen } = useSidebarContext()
+  const { handleClose } = useSidebarContext()
   const { handleClickToSetData } = useGetProjectsDataContext()
 
-  const handleExternalLinkClick = () => {
-    setIsOpen(false)
-  }
-
   const handleChildLinkClick = (discipline: DisciplineType) => {
-    setIsOpen(false)
+    handleClose()
     handleClickToSetData(discipline)
   }
 
@@ -39,7 +34,7 @@ export default function SidebarNavLink({
       {isExternal ? (
         <a 
           href={href} 
-          onClick={handleExternalLinkClick} 
+          onClick={handleClose} 
           target="_blank"
         >
           {text}

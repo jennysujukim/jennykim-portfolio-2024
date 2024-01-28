@@ -15,9 +15,7 @@ import styles from './Sidebar.module.scss'
 export default function Sidebar() {
 
   const isResponsive = useResponsive()
-  const { isOpen, setIsOpen, handleToggleState } = useSidebarContext()
-
-  const handleClick = () => setIsOpen(false)
+  const { isOpen, handleToggleState, handleClose } = useSidebarContext()
 
   return (
     <>
@@ -38,7 +36,7 @@ export default function Sidebar() {
               <div className={styles.Submark_Cont}>
                 <Link 
                   to="/"
-                  onClick={handleClick}
+                  onClick={handleClose}
                 >
                   <Image 
                     src={submark}
