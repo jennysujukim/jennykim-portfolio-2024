@@ -1,4 +1,6 @@
 import Dimensions from '../../types/constants/Dimensions'
+import { getProjectsData } from "../../utils/getProjectsData"
+import { DisciplineType } from "../../types/enums/DisciplineType"
 // assets
 import logo from '../../assets/images/jennykim-type.svg'
 // components
@@ -10,6 +12,13 @@ import StickyContent from './Stickycontent'
 import styles from './HomePage.module.scss'
 
 export default function HomePage() {
+
+  const frontendProjects = getProjectsData(DisciplineType.Frontend).projects.slice(0, 2)
+  const uiuxProjects = getProjectsData(DisciplineType.UIUX).projects.slice(0, 1)
+  const graphicProjects = getProjectsData(DisciplineType.Graphic).projects.slice(0, 1)
+
+  const allProjects = [ ...frontendProjects, ...uiuxProjects, ...graphicProjects ]
+
   return (
     <div>
       <section className={`Section ${styles.Wrapper}`}>
@@ -30,12 +39,12 @@ export default function HomePage() {
         </div>
       </section>
       <div className={styles.Divider_Cont}>
-        <h3>Selected Projects</h3>
+        <h3>Featured Works</h3>
         <hr className="Line_Spacing"></hr>
       </div>
       <StickyLayout 
-        stickyContent={<StickyContent />}
-        scrollContent={<ScrollContent />}
+        stickyContent={<StickyContent allProjects={allProjects} />}
+        scrollContent={<ScrollContent allProjects={allProjects}/>}
       />
     </div>
   )
