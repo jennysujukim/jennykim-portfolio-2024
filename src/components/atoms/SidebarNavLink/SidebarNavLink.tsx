@@ -22,11 +22,11 @@ export default function SidebarNavLink({
   childLinks }: SidebarNavLinkProps) {
 
   const { handleClose } = useSidebarContext()
-  const { handleClickToSetData } = useGetProjectsDataContext()
+  const { handleSetDiscipline } = useGetProjectsDataContext()
 
   const handleChildLinkClick = (discipline: DisciplineType) => {
     handleClose()
-    handleClickToSetData(discipline)
+    handleSetDiscipline(discipline)
   }
 
   return (

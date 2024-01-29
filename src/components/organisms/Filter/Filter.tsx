@@ -5,29 +5,29 @@ import FilterButton from "../../atoms/FilterButton"
 
 export default function Filter() {
 
-  const { isActive, handleClickToSetData } = useGetProjectsDataContext()
+  const { isActive, handleSetDiscipline } = useGetProjectsDataContext()
 
   return (
     <ul>
       <FilterButton 
         text={DisciplineType.All}
         isActive={isActive === DisciplineType.All}
-        handleClick={() => handleClickToSetData(DisciplineType.All)}
+        handleClick={() => handleSetDiscipline(DisciplineType.All)}
       />
       <FilterButton 
         text={DisciplineType.Frontend}
         isActive={isActive === DisciplineType.Frontend}
-        handleClick={() => handleClickToSetData(DisciplineType.Frontend)}
+        handleClick={() => handleSetDiscipline(DisciplineType.Frontend)}
       />
       <FilterButton 
         text={DisciplineType.UIUX}
         isActive={isActive === DisciplineType.UIUX}
-        handleClick={() => handleClickToSetData(DisciplineType.UIUX)}
+        handleClick={() => handleSetDiscipline(DisciplineType.UIUX)}
       />
       <FilterButton 
         text={DisciplineType.Graphic}
         isActive={isActive === DisciplineType.Graphic}
-        handleClick={() => handleClickToSetData(DisciplineType.Graphic)}
+        handleClick={() => handleSetDiscipline(DisciplineType.Graphic)}
       />
     </ul>
   )

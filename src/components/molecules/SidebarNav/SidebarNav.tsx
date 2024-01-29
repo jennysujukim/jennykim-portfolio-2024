@@ -9,11 +9,11 @@ export default function SidebarNav() {
   const links = [
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
-    { href: "/projects", text: "Projects", childLinks: [
-      { text: DisciplineType.All, href: "/projects", discipline: DisciplineType.All },
-      { text: DisciplineType.Frontend, href: "/projects", discipline: DisciplineType.Frontend },
-      { text: DisciplineType.UIUX, href: "/projects", discipline: DisciplineType.UIUX },
-      { text: DisciplineType.Graphic, href: "/projects", discipline: DisciplineType.Graphic },
+    { href: "/work", text: "Projects", childLinks: [
+      { text: DisciplineType.All, href: "/work", discipline: DisciplineType.All },
+      { text: DisciplineType.Frontend, href: "/work", discipline: DisciplineType.Frontend },
+      { text: DisciplineType.UIUX, href: "/work", discipline: DisciplineType.UIUX },
+      { text: DisciplineType.Graphic, href: "/work", discipline: DisciplineType.Graphic },
     ]},
     { href: "https://www.google.com/", text: "Resume", isExternal: true }
   ]

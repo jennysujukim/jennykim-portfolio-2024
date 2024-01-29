@@ -6,7 +6,7 @@ import GlobalLayout from './layouts/GlobalLayout'
 // pages
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-import ProjectsPage from './pages/ProjectsPage'
+import WorkPage from './pages/WorkPage'
 import ArtifactPage from './pages/ArtifactPage'
 import NotFoundPage from './pages/NotFoundPage'
 // styles
@@ -23,8 +23,8 @@ function App() {
           <Route path="/" element={<GlobalLayout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
-            <Route path="projects">
-              <Route index element={<ProjectsPage />} />
+            <Route path="work">
+              <Route index element={<WorkPage />} />
               <Route path={`:${id}`} element={<ArtifactPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />

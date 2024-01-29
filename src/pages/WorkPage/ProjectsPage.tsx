@@ -3,9 +3,9 @@ import { useGetProjectsDataContext } from "../../hooks/useGetProjectsDataContext
 import Filter from "../../components/organisms/Filter"
 import Card from "../../components/organisms/Card"
 
-export default function ProjectsPage() {
+export default function WorkPage() {
 
-  const { projectsOverviewData } = useGetProjectsDataContext()
+  const { isData } = useGetProjectsDataContext()
 
   return (
     <div>
@@ -13,10 +13,10 @@ export default function ProjectsPage() {
         <Filter />
       </section>
       <section>
-        {projectsOverviewData.map((project, index) => (
+        {isData && isData.map((project, index) => (
           <Card 
             key={index}
-            details={project}
+            details={project.overview}
           />
         ))}
       </section>

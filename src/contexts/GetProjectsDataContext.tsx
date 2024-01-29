@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import { DisciplineType } from "../types/enums/DisciplineType";
 import { Project } from "../types/models/Project";
 import { getProjectsData } from "../utils/getProjectsData";
@@ -57,11 +57,6 @@ export const GetProjectsDataContextProvider = ({ children }: GetProjectsDataCont
       return null;
     }
   } 
-
-  useEffect(() => {
-    const data = allProjects;
-    setIsData(data);
-  }, [isActive])
 
   return (
     <GetProjectsDataContext.Provider value={{
