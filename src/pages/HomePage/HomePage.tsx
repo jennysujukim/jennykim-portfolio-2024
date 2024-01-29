@@ -39,7 +39,7 @@ export default function HomePage() {
         </div>
       </section>
       <div className={styles.Divider_Cont}>
-        <h3>Featured Works</h3>
+        <h3>Featured Work</h3>
         <hr className="Line_Spacing"></hr>
       </div>
       <StickyLayout 

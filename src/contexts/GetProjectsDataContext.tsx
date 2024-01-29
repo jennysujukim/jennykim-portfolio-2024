@@ -1,64 +1,66 @@
 import { createContext, useState, useEffect } from "react";
 import { DisciplineType } from "../types/enums/DisciplineType";
-import { Projects } from "../types/models/Projects";
 import { Project } from "../types/models/Project";
 import { getProjectsData } from "../utils/getProjectsData";
-import { ProjectOverview } from "../types/models/ProjectOverview";
+
 
 type GetProjectsDataContextType = {
   isActive: DisciplineType;
   setIsActive: React.Dispatch<React.SetStateAction<DisciplineType>>;
-  isData: Projects;
-  setIsData: React.Dispatch<React.SetStateAction<Projects>>;
-  projectsOverviewData: ProjectOverview[];
-  handleClickToSetData: (discipline: DisciplineType) => void;
-  selectedProject: Project | null;
-  setSelectedProject: React.Dispatch<React.SetStateAction<Project | null>>;
+  isData: Project[] | null;
+  setIsData: React.Dispatch<React.SetStateAction<Project[] | null>>;
+  handleSetDiscipline: (discipline: DisciplineType) => void;
 };
 
 type GetProjectsDataContextProviderProps = {
   children: React.ReactNode;
 };
 
-const initialData = getProjectsData(DisciplineType.All);
+const initialData = getProjectsData().projects;
 
 const defaultContextValue: GetProjectsDataContextType = {
   isActive: DisciplineType.All,
   setIsActive: () => {},
   isData: initialData,
   setIsData: () => {},
-  projectsOverviewData: [],
-  handleClickToSetData: () => {},
-  selectedProject: null,
-  setSelectedProject: () => {},
+  handleSetDiscipline: () => {},
 }
 
 export const GetProjectsDataContext = createContext(defaultContextValue);
 
 export const GetProjectsDataContextProvider = ({ children }: GetProjectsDataContextProviderProps) => {
 
+  const allProjects = getProjectsData().projects;
+  const frontendProjects = allProjects.filter((project) => project.overview.discipline.includes(DisciplineType.Frontend))
+  const uiuxProjects = allProjects.filter((project) => project.overview.discipline.includes(DisciplineType.UIUX))
+  const graphicProjects = allProjects.filter((project) => project.overview.discipline.includes(DisciplineType.Graphic))
+
   const [ isActive, setIsActive ] = useState<DisciplineType>(DisciplineType.All)
-  const [ isData, setIsData ] = useState<Projects>(initialData)
-  const [ projectsOverviewData, setProjectsOverviewData ] = useState<ProjectOverview[]>([]);
+  const [ isData, setIsData ] = useState<Project[] | null>(initialData)
 
-  const [ selectedProject, setSelectedProject ] = useState<Project | null>(null);
+  const handleSetDiscipline = (discipline: DisciplineType) => {
+    setIsActive((prevState) => prevState === discipline ? prevState : discipline);
 
-  const handleClickToSetData = (discipline: DisciplineType) => {
-    if(discipline === DisciplineType.None){
-      return null;
-    } else {
-      const newData = getProjectsData(discipline);
-      setIsActive((prevState) => prevState === discipline ? prevState : discipline);
+    if(discipline === DisciplineType.All){
+      const newData = allProjects;
       setIsData(newData);
-      setProjectsOverviewData(newData.projects.map(project => project.overview));
-      return;
+    } else if (discipline === DisciplineType.Frontend){
+      const newData = frontendProjects;
+      setIsData(newData);
+    } else if (discipline === DisciplineType.UIUX){
+      const newData = uiuxProjects;
+      setIsData(newData);
+    } else if (discipline === DisciplineType.Graphic){
+      const newData = graphicProjects;
+      setIsData(newData);
+    } else {
+      return null;
     }
   } 
 
   useEffect(() => {
-    const data = getProjectsData(isActive);
+    const data = allProjects;
     setIsData(data);
-    setProjectsOverviewData(data.projects.map(project => project.overview));
   }, [isActive])
 
   return (
@@ -67,10 +69,7 @@ export const GetProjectsDataContextProvider = ({ children }: GetProjectsDataCont
       setIsActive,
       isData,
       setIsData,
-      projectsOverviewData,
-      handleClickToSetData,
-      selectedProject,
-      setSelectedProject
+      handleSetDiscipline,
     }}>
       {children}
     </GetProjectsDataContext.Provider>
