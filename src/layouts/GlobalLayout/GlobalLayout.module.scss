@@ -19,3 +19,10 @@
   overflow: clip;
   flex: 1;
 }
+
+.Width_Cont {
+
+  @include lap {
+    min-width: $mainContent_full_width_lap;
+  }
+}

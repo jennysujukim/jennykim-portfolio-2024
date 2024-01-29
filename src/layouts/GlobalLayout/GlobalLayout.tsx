@@ -19,10 +19,12 @@ export default function GlobalLayout() {
         className={`Container_X ${styles.Main_Cont}`}
         onClick={handleClose}
       >
-        <Outlet />
-        <footer className={styles.Footer_Cont}>
-          <Footer />
-        </footer>
+        <div className={styles.Width_Cont}>
+          <Outlet />
+          <footer className={styles.Footer_Cont}>
+            <Footer />
+          </footer>
+        </div>
       </main>
     </div>
   )
