@@ -7,8 +7,6 @@ export default function ProjectsPage() {
 
   const { projectsOverviewData } = useGetProjectsDataContext()
 
-  console.log(projectsOverviewData)
-
   return (
     <div>
       <section>

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { DisciplineType } from "../types/enums/DisciplineType";
+import { Projects } from "../types/models/Projects";
 import { Project } from "../types/models/Project";
 import { getProjectsData } from "../utils/getProjectsData";
 import { ProjectOverview } from "../types/models/ProjectOverview";
@@ -7,10 +8,12 @@ import { ProjectOverview } from "../types/models/ProjectOverview";
 type GetProjectsDataContextType = {
   isActive: DisciplineType;
   setIsActive: React.Dispatch<React.SetStateAction<DisciplineType>>;
-  isData: Project;
-  setIsData: React.Dispatch<React.SetStateAction<Project>>;
+  isData: Projects;
+  setIsData: React.Dispatch<React.SetStateAction<Projects>>;
   projectsOverviewData: ProjectOverview[];
   handleClickToSetData: (discipline: DisciplineType) => void;
+  selectedProject: Project | null;
+  setSelectedProject: React.Dispatch<React.SetStateAction<Project | null>>;
 };
 
 type GetProjectsDataContextProviderProps = {
@@ -26,6 +29,8 @@ const defaultContextValue: GetProjectsDataContextType = {
   setIsData: () => {},
   projectsOverviewData: [],
   handleClickToSetData: () => {},
+  selectedProject: null,
+  setSelectedProject: () => {},
 }
 
 export const GetProjectsDataContext = createContext(defaultContextValue);
@@ -33,8 +38,10 @@ export const GetProjectsDataContext = createContext(defaultContextValue);
 export const GetProjectsDataContextProvider = ({ children }: GetProjectsDataContextProviderProps) => {
 
   const [ isActive, setIsActive ] = useState<DisciplineType>(DisciplineType.All)
-  const [ isData, setIsData ] = useState<Project>(initialData)
+  const [ isData, setIsData ] = useState<Projects>(initialData)
   const [ projectsOverviewData, setProjectsOverviewData ] = useState<ProjectOverview[]>([]);
+
+  const [ selectedProject, setSelectedProject ] = useState<Project | null>(null);
 
   const handleClickToSetData = (discipline: DisciplineType) => {
     if(discipline === DisciplineType.None){
@@ -61,7 +68,9 @@ export const GetProjectsDataContextProvider = ({ children }: GetProjectsDataCont
       isData,
       setIsData,
       projectsOverviewData,
-      handleClickToSetData
+      handleClickToSetData,
+      selectedProject,
+      setSelectedProject
     }}>
       {children}
     </GetProjectsDataContext.Provider>

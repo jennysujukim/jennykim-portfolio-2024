@@ -1,5 +1,5 @@
 import { DisciplineType } from '../types/enums/DisciplineType';
-import { Project } from '../types/models/Project';
+import { Projects } from '../types/models/Projects';
 
 
 export const getProjectsData = (category: DisciplineType) => {
@@ -28,7 +28,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Frontend developer, UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'frontend project 1 description',
-              link: '/works/frontend-development/project-1',
+              link: '/projects/frontend-project-1',
             },
             livesite: 'https://seojeongkim.com',
             link: 'https://github.com',
@@ -69,7 +69,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Frontend developer, UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'frontend project 2 description',
-              link: '/works/frontend-development/project-2',
+              link: '/projects/frontend-project-2',
             },
             livesite: 'https://seojeongkim.com',
             link: 'https://github.com',
@@ -116,7 +116,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Frontend developer, UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'frontend project 3 description',
-              link: '/works/frontend-development/project-3',
+              link: '/projects/frontend-project-3',
             },
             livesite: 'https://seojeongkim.com',
             link: 'https://github.com',
@@ -163,7 +163,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Frontend developer, UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'frontend project 4 description',
-              link: '/works/frontend-development/project-4',
+              link: '/projects/frontend-project-4',
             },
             livesite: 'https://seojeongkim.com',
             link: 'https://github.com',
@@ -201,7 +201,7 @@ export const getProjectsData = (category: DisciplineType) => {
             ]
           }
         ]
-      } as Project
+      } as Projects
     },
     [DisciplineType.UIUX]: () => {
       return {
@@ -216,7 +216,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'UIUX project 1 description',
-              link: '/works/uiux-design/project-1',
+              link: '/projects/uiux-project-1',
             },
             link: 'https://github.com',
             sections: [
@@ -256,7 +256,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'UIUX project 2 description',
-              link: '/works/uiux-design/project-2',
+              link: '/projects/uiux-project-2',
             },
             link: 'https://github.com',
             sections: [
@@ -302,7 +302,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'UIUX designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'UIUX project 3 description',
-              link: '/works/uiux-design/project-3',
+              link: '/projects/uiux-project-3',
             },
             link: 'https://github.com',
             sections: [
@@ -339,7 +339,7 @@ export const getProjectsData = (category: DisciplineType) => {
             ]
           }
         ]
-      } as Project
+      } as Projects
     },
     [DisciplineType.Graphic]: () => {
       return {
@@ -354,7 +354,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Graphic designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'Graphic project 1 description',
-              link: '/works/graphic-design/project-1',
+              link: '/projects/graphic-project-1',
             },
             sections: [
               {
@@ -387,7 +387,7 @@ export const getProjectsData = (category: DisciplineType) => {
               role: 'Graphic designer',
               tech: 'React Native, Expo, Styled Components',
               description: 'Graphic project 2 description',
-              link: '/works/graphic-design/project-2',
+              link: '/projects/graphic-project-2',
             },
             sections: [
               {
@@ -405,7 +405,7 @@ export const getProjectsData = (category: DisciplineType) => {
             ]
           }
         ]
-      } as Project
+      } as Projects
     },
     [DisciplineType.None]: () => {
       return {
@@ -434,7 +434,7 @@ export const getProjectsData = (category: DisciplineType) => {
             ]
           }
         ]
-      } as Project
+      } as Projects
     } 
   }
 

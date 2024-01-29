@@ -12,8 +12,9 @@ type CardProps = {
 }
 
 export default function Card({ details }: CardProps) {
+
   return (
-    <div>
+    <div id={details.id}>
       <div className={styles.TitleContainer}>
         <h5 className="h3Style">{details.title}&nbsp;/&nbsp;</h5>
         <span className="pStyle">{details.keywords}</span>
