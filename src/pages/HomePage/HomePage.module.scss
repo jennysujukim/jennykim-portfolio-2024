@@ -22,9 +22,12 @@
 }
 
 .Text {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   padding-bottom: $section_spacing_mob;
-  @include tab { padding-bottom: $section_spacing_tab; }
+  @include tab { 
+    padding-top: unset;
+    padding-bottom: $section_spacing_tab; 
+  }
   @include lap { 
     padding-top: unset; 
     padding-bottom: unset;
@@ -43,7 +46,7 @@
 }
 
 .Graphic {
-  background: $primary_black;
+  border: $border_primary_black;
   border-radius: 50%;
   width: 100px;
   height: 100px;

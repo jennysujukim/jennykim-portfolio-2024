@@ -31,10 +31,10 @@
   background: $primary_black;
   @include flexbox(center, center);
   margin: 1.5rem 0;
+  overflow: hidden;
 
-  @include tab {
-    height: 600px;
-  }
+  @include tab { height: 600px; }
+  @include lap { height: unset; }
 
   img {
     width: 80%;

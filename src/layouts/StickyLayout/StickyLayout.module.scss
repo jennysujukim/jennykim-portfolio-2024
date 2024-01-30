@@ -3,7 +3,7 @@
 .Wrapper {
   @include lap {
     @include flexbox(unset, unset);
-    gap: $display_gap_lap;
+    gap: 3rem;
   }
 }
 

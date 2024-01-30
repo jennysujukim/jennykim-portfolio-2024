@@ -9,7 +9,7 @@ export default function SidebarNav() {
   const links = [
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
-    { href: "/work", text: "Projects", childLinks: [
+    { href: "/work", text: "Work", childLinks: [
       { text: DisciplineType.All, href: "/work", discipline: DisciplineType.All },
       { text: DisciplineType.Frontend, href: "/work", discipline: DisciplineType.Frontend },
       { text: DisciplineType.UIUX, href: "/work", discipline: DisciplineType.UIUX },
@@ -20,7 +20,7 @@ export default function SidebarNav() {
 
   return (
     <div className={styles.Wrapper}>
-      <nav className={styles.Container}>
+      <nav className={styles.Nav_Cont}>
         <ul>
           {links.map((link, index) => (
             <SidebarNavLink
@@ -34,8 +34,15 @@ export default function SidebarNav() {
           )}
         </ul>
       </nav>
-      <div>
-        <p>© 2021</p>
+      <div className={styles.Contact_Cont}>
+        <p className="H3_Style">Find me on</p>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/jenny-seojeong-kim/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/jennysujukim" target="_blank">Github</a>
+            <a href="https://www.instagram.com/jklemonjuice/" target="_blank">Instagram</a>
+          </li>
+        </ul>
       </div>
     </div>
   )
