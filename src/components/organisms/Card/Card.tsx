@@ -14,14 +14,25 @@ type CardProps = {
 export default function Card({ details }: CardProps) {
 
   return (
-    <div id={details.id}>
-      <div className={styles.TitleContainer}>
-        <h5 className="h3Style">{details.title}&nbsp;/&nbsp;</h5>
-        <span className="pStyle">{details.keywords}</span>
+    <article 
+      id={details.id}
+      className={styles.Wrapper}
+    >
+      <div className={styles.Title_Cont}>
+        {details.discipline.map((value, index) => (
+          <span 
+            key={index}
+            className={styles.Discipline}
+          >
+            {value}
+          </span>
+        ))}
+        <h2 className="H3_Style">{details.title}&nbsp;/&nbsp;</h2>
+        <p className={styles.Type}>{details.type}</p>
       </div>
       <Link 
         to={details.link}
-        className={styles.ImageContainer}
+        className={styles.Image_Cont}
       >
         <img 
           className={styles.Image}
@@ -29,22 +40,16 @@ export default function Card({ details }: CardProps) {
           alt="Preview of project"
         />
       </Link>
-      <div className={styles.DetailsContainer}>
-        <div>
-          <p className={styles.Description}>&#9776; {details.description}</p>
-          <div className={styles.DetailWrapper}>
-            <div className={styles.DetailContainer}>
-              <p className={styles.DetailTitle}>Timeline</p>
-              <p className={styles.Detail}>{details.timeline}</p>
-            </div>
-            <div className={styles.DetailContainer}>
-              <p className={styles.DetailTitle}>Role</p>
-              <p className={styles.Detail}>{details.role}</p>
-            </div>
-            <div className={styles.DetailContainer}>
-              <p className={styles.DetailTitle}>Tech</p>
-              <p className={styles.Detail}>{details.tech}</p>
-            </div>
+
+      <div className={styles.Details_Cont}>
+        <div className={styles.Detail_Wrapper}>
+          <div className={styles.Detail_Cont}>
+            <p className={styles.Detail_Title}>Role</p>
+            <p className={styles.Detail}>{details.role}</p>
+          </div>
+          <div className={styles.Detail_Cont}>
+            <p className={styles.Detail_Title}>Tools</p>
+            <p className={styles.Detail}>{details.tools}</p>
           </div>
         </div>
         <CtaButton 
@@ -52,6 +57,6 @@ export default function Card({ details }: CardProps) {
           href={details.link}
         />
       </div>
-    </div>
+    </article>
   )
 }

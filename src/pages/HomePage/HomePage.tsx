@@ -1,6 +1,7 @@
 import { getProjectsData } from "../../utils/getProjectsData"
 import useResponsive from "../../hooks/useResponsive"
 import { BreakpointType } from "../../types/enums/BreakpointType"
+import { Project } from "../../types/models/Project"
 // assets
 import logo from '../../assets/images/jennykim-type.svg'
 // components
@@ -12,15 +13,15 @@ import styles from './HomePage.module.scss'
 
 export default function HomePage() {
 
+  const isResponsive = useResponsive()
+
   const allProjects = getProjectsData().projects
   const firstProject = allProjects.find((project) => project.overview.link === "/work/sadie-lee-cms-service")
   const secondProject = allProjects.find((project) => project.overview.link === "/work/phonebox-partner-portal-app")
   const thirdProject = allProjects.find((project) => project.overview.link === "/work/work-5")
   const fourthProject = allProjects.find((project) => project.overview.link === "/work/x-nihilo")
 
-  const featuredWork = [ firstProject, secondProject, thirdProject, fourthProject ]
-
-  const isResponsive = useResponsive()
+  const featuredWork = [ firstProject, secondProject, thirdProject, fourthProject ] as Project[]
 
   return (
     <>
@@ -45,8 +46,8 @@ export default function HomePage() {
         { isResponsive !== BreakpointType.Mobile && <hr className="Line_Spacing"></hr> }
       </div>
       <StickyLayout 
-        stickyContent={<StickyContent allProjects={featuredWork} />}
-        scrollContent={<ScrollContent allProjects={featuredWork}/>}
+      stickyContent={<StickyContent allProjects={featuredWork} />}
+      scrollContent={<ScrollContent allProjects={featuredWork}/>}
       />
     </>
   )
