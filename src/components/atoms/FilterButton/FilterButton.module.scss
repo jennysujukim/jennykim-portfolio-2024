@@ -1,0 +1,15 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  cursor: pointer;
+  @include lap {
+    @include gridCol(auto, 3);
+    border-bottom: $border_primary_black;
+  }
+}
+
+.Container {
+  @include lap {
+    @include flexbox(space-between, unset);
+  }
+}

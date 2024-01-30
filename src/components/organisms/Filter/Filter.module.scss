@@ -1,0 +1,7 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include lap {
+    @include grid(repeat(12, 1fr), $gap_lap); };
+
+}

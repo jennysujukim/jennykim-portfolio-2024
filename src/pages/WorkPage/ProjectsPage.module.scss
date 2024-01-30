@@ -1,0 +1,21 @@
+@use '../../sass/abstracts/' as *;
+
+.Filter_Cont {
+  padding-top: 3rem;
+}
+
+.Cards_Cont {
+  @include grid(repeat(12, 1fr), $gap_lap);
+  @include lap {
+    row-gap: 3rem;
+  }
+}
+
+.Card_Cont {
+
+  @include gridCol(auto, 12);
+
+  @include tab {
+    @include gridCol(auto, 6);
+  }
+}
