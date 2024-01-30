@@ -18,12 +18,16 @@
 .Main_Cont {
   overflow: clip;
   flex: 1;
+  @include deskLg { @include flexbox(center, unset); }
 }
 
 .Width_Cont {
+  @include lap { min-width: $mainContent_full_width_lap; }
 
-  @include lap {
-    min-width: $mainContent_full_width_lap;
+
+  @include deskLg {
+    width: $mainContent_max_width;
+    min-width: $mainContent_max_width;
   }
 }
 
