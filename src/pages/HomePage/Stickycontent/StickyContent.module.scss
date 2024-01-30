@@ -1,3 +1,28 @@
+@use '../../../sass/abstracts/' as *;
+
 .Container {
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  border-bottom: $border_primary_grey;
+  margin-bottom: 1rem;
+
+  span, h5 {
+    color: $primary_grey;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
+
+}
+
+.Chip_Cont {
+  margin: 0.5rem 0;
+}
+
+.Chip {
+  font-size: 0.7rem;
+  border: $border_primary_grey;
+  padding: 0.1rem 0.3rem;
+  margin-right: 0.5rem;
 }

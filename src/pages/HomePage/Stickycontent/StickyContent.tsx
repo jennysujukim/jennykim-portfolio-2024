@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Project } from "../../../types/models/Project"
 // styles
 import styles from './StickyContent.module.scss'
@@ -15,9 +14,20 @@ export default function StickyContent({ allProjects }: StickyContentProps) {
           key={index}
           className={styles.Container}
         >
-          <Link to={`#${project.overview.id}`}>
+          <a href={`#${project.overview.id}`}>
+            <span>Work #{index}</span>
             <h5>{project.overview.title}</h5>
-          </Link>
+            <div className={styles.Chip_Cont}>
+              {project.overview.discipline.map((value, index) => (
+                <span 
+                  key={index}
+                  className={styles.Chip}
+                >
+                  {value}
+                </span>
+              ))}
+            </div>
+          </a>
         </li>
       ))}
     </ul>

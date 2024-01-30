@@ -8,13 +8,13 @@ export default function SidebarNav() {
 
   const links = [
     { href: "/", text: "Home" },
-    { href: "/about", text: "About" },
     { href: "/work", text: "Work", childLinks: [
       { text: DisciplineType.All, href: "/work", discipline: DisciplineType.All },
       { text: DisciplineType.Frontend, href: "/work", discipline: DisciplineType.Frontend },
       { text: DisciplineType.UIUX, href: "/work", discipline: DisciplineType.UIUX },
       { text: DisciplineType.Graphic, href: "/work", discipline: DisciplineType.Graphic },
     ]},
+    { href: "/about", text: "About" },
     { href: "https://www.google.com/", text: "Resume", isExternal: true }
   ]
 
