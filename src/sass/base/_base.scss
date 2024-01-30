@@ -73,6 +73,11 @@ a {
 }
 
 .Section {
+
+  padding: $section_spacing_mob 0;
+
+  @include tab { padding: $section_spacing_tab 0; };
+
   @include lap {
     padding: $section_spacing_lap 0;
   }

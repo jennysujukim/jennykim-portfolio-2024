@@ -1,8 +1,29 @@
+@use '../../../sass/abstracts/' as *;
+
 .Wrapper {
-  flex: 1;
-  height: 100%;
+  padding: 2rem 1rem;
+  height: calc($sidebar_open_height_mob - ($sidebar_height_mob + 4rem));
+  white-space: nowrap;
+  animation: SlideIn 0.45s ease-in-out;
+  @include flexbox(flex-start, space-between, column);
+  @include lap { 
+    width: 100%;
+    height: calc(100% - ($container_spacing_lap * 2)); 
+  }
 }
 
-.Container {
-  padding: 1rem;
+@keyframes SlideIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.Nav_Cont { flex: 1; }
+
+.Contact_Cont {
+}
+
+.Contact_Title {
+  font-family: $helveticaNeue_medium;
+  text-transform: uppercase;
+  font-size: 1.1rem;
 }

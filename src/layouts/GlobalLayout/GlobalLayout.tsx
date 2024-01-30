@@ -8,10 +8,16 @@ import styles from './GlobalLayout.module.scss'
 
 export default function GlobalLayout() {
 
-  const { handleClose } = useSidebarContext()
+  const { handleClose, isOpen } = useSidebarContext()
 
   return (
     <div className={styles.Wrapper}>
+      { isOpen && 
+        <div 
+          className={styles.Overlay} 
+          onClick={handleClose}
+        ></div>
+      }
       <header className={styles.Header_Cont}>
         <Sidebar />
       </header>
@@ -19,10 +25,12 @@ export default function GlobalLayout() {
         className={`Container_X ${styles.Main_Cont}`}
         onClick={handleClose}
       >
-        <Outlet />
-        <footer className={styles.Footer_Cont}>
-          <Footer />
-        </footer>
+        <div className={styles.Width_Cont}>
+          <Outlet />
+          <footer className={styles.Footer_Cont}>
+            <Footer />
+          </footer>
+        </div>
       </main>
     </div>
   )

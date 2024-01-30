@@ -3,6 +3,7 @@ import { DisciplineType } from '../../../types/enums/DisciplineType';
 import { useSidebarContext } from '../../../hooks/useSidebarContext'
 import { useGetProjectsDataContext } from '../../../hooks/useGetProjectsDataContext'
 // styles
+import styles from './SidebarNavLink.module.scss'
 
 type SidebarNavLinkProps = {
   href: string;
@@ -30,9 +31,10 @@ export default function SidebarNavLink({
   }
 
   return (
-    <li>
+    <li className={styles.Wrapper}>
       {isExternal ? (
         <a 
+          className="H3_Style"
           href={href} 
           onClick={handleClose} 
           target="_blank"
@@ -41,16 +43,20 @@ export default function SidebarNavLink({
         </a>
       ) : (
         <Link 
+          className="H3_Style"
           to={href}
-          onClick={text === 'Projects' ? () => handleChildLinkClick(DisciplineType.All) : () => handleChildLinkClick(DisciplineType.None)}
+          onClick={text === 'Work' ? () => handleChildLinkClick(DisciplineType.All) : () => handleChildLinkClick(DisciplineType.None)}
         >
           {text}
         </Link>
       )}
       {childLinks && (
-        <ul>
+        <ul className={styles.ChildLinks_Cont}>
           {childLinks.map((childLink, index) => (
-            <li key={index}>
+            <li 
+              key={index}
+              className={`H5_Style ${styles.ChildLink_Cont}`}
+            >
               <Link
                 to={childLink.href}
                 onClick={() => handleChildLinkClick(childLink.discipline)}
