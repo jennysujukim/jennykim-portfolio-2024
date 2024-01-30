@@ -2,13 +2,15 @@ import { useGetProjectsDataContext } from "../../../hooks/useGetProjectsDataCont
 import { DisciplineType } from "../../../types/enums/DisciplineType"
 // components
 import FilterButton from "../../atoms/FilterButton"
+// styles
+import styles from './Filter.module.scss'
 
 export default function Filter() {
 
   const { isActive, handleSetDiscipline } = useGetProjectsDataContext()
 
   return (
-    <ul>
+    <ul className={styles.Wrapper}>
       <FilterButton 
         text={DisciplineType.All}
         isActive={isActive === DisciplineType.All}

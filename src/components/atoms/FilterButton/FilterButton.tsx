@@ -20,7 +20,7 @@ export default function FilterButton({
       className={styles.Wrapper}
       onClick={() => handleClick(text)}
     >
-      <div>
+      <div className={styles.Container}>
         <p>{text}</p>
         {isActive && isResponsive !== 'mobile' && isResponsive !== 'tablet' &&
           <div>&bull;</div>

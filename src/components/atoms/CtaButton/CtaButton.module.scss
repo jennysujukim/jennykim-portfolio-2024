@@ -7,6 +7,7 @@
 .Text {
   width: fit-content;
   text-transform: uppercase;
+  white-space: nowrap;
   font-family: $helveticaNeue_medium;
   font-size: $fs_p_mob;
   padding: 0.5rem 0.7rem;
