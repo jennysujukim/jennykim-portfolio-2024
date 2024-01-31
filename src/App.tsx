@@ -1,6 +1,7 @@
 import { Routes, Route, useParams } from 'react-router-dom'
 import { SidebarContextProvider } from './contexts/SidebarContext'
 import { GetProjectsDataContextProvider } from './contexts/GetProjectsDataContext'
+import { IndicatorContextProvider } from './contexts/IndicatorContext'
 // layout
 import GlobalLayout from './layouts/GlobalLayout'
 // pages
@@ -19,17 +20,19 @@ function App() {
   return (
     <GetProjectsDataContextProvider>
       <SidebarContextProvider>
-        <Routes>
-          <Route path="/" element={<GlobalLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="work">
-              <Route index element={<WorkPage />} />
-              <Route path={`:${id}`} element={<ArtifactPage />} />
+        <IndicatorContextProvider>
+          <Routes>
+            <Route path="/" element={<GlobalLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="work">
+                <Route index element={<WorkPage />} />
+                <Route path={`:${id}`} element={<ArtifactPage />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </IndicatorContextProvider>
       </SidebarContextProvider>
     </GetProjectsDataContextProvider>
   )

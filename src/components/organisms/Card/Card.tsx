@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { ProjectOverview } from "../../../types/models/ProjectOverview"
+import { useIndicatorContext } from "../../../hooks/useIndicatorContext";
 // assets
 import testImage from "../../../assets/images/projects/thumbnail-test.png"
 // components
@@ -13,10 +15,36 @@ type CardProps = {
 
 export default function Card({ details }: CardProps) {
 
+  const targetRef = useRef<HTMLElement>(null);
+
+  const { isActive, setIsActive } = useIndicatorContext();
+
+  useEffect(() => {
+    const currentTargetRef = targetRef.current;
+    const options = {
+      root: null,
+      threshold: 0.5,
+      rootMargin: "0px"
+    }
+
+    if(currentTargetRef) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if(entry.isIntersecting === true){
+          setIsActive(entry.target.id)
+        }
+      },options)
+
+      observer.observe(currentTargetRef);
+
+      return () => observer.disconnect();
+    }
+  }, [isActive, setIsActive])
+
   return (
     <article 
       id={details.id}
       className={styles.Wrapper}
+      ref={targetRef}
     >
       <div className={styles.Title_Cont}>
         {details.discipline.map((value, index) => (
