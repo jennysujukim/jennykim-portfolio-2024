@@ -6,23 +6,30 @@
   border-bottom: $border_primary_grey;
   margin-bottom: 1rem;
 
-  span, h5 {
-    color: $primary_grey;
-  }
-
-  span {
-    font-size: 0.7rem;
-  }
-
+  &.Active { border-bottom: 1px solid $primary_blue_dark; }
 }
 
-.Chip_Cont {
-  margin: 0.5rem 0;
+.Title_Cont {
+  @include lap {
+    @include flexbox(space-between, center);
+    gap: 0.5rem;
+  }
 }
 
-.Chip {
+.Work {
   font-size: 0.7rem;
-  border: $border_primary_grey;
-  padding: 0.1rem 0.3rem;
-  margin-right: 0.5rem;
+  color: $primary_grey;
+
+  &.Active { color: $primary_blue_dark; }
+}
+
+.Title {
+  color: $primary_grey;
+
+  @include lap { padding-top: 0.5rem; }
+  &.Active { color: $primary_blue_dark; }
+}
+
+.Bullet {
+  color: $primary_blue_dark;
 }

@@ -28,13 +28,16 @@
 
   width: 100%;
   height: 350px;
-  background: #e8e8e8;
+  background: $secondary_grey;
   @include flexbox(center, center);
   margin: 1.5rem 0;
   overflow: hidden;
 
   @include tab { height: 600px; }
-  @include lap { height: unset; }
+  @include lap { 
+    height: unset; 
+    max-height: 600px;
+  }
 
   img {
     width: 80%;

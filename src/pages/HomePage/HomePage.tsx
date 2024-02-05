@@ -4,7 +4,7 @@ import { BreakpointType } from "../../types/enums/BreakpointType"
 import { Project } from "../../types/models/Project"
 // assets
 import logo from '../../assets/images/jennykim-type.svg'
-import graphic from '../../assets/images/global/graphic-test.jpg'
+import graphic from '../../assets/images/global/graphic-test.png'
 // components
 import StickyLayout from '../../layouts/StickyLayout'
 import ScrollContent from './ScrollContent'
@@ -19,7 +19,7 @@ export default function HomePage() {
   const allProjects = getProjectsData().projects
   const firstProject = allProjects.find((project) => project.overview.link === "/work/sadie-lee-cms-service")
   const secondProject = allProjects.find((project) => project.overview.link === "/work/phonebox-partner-portal-app")
-  const thirdProject = allProjects.find((project) => project.overview.link === "/work/daily-protein")
+  const thirdProject = allProjects.find((project) => project.overview.link === "/work/work-5")
   const fourthProject = allProjects.find((project) => project.overview.link === "/work/x-nihilo")
 
   const featuredWork = [ firstProject, secondProject, thirdProject, fourthProject ] as Project[]
@@ -34,15 +34,15 @@ export default function HomePage() {
           />
           <div className={styles.Text}>
             <h2>Frontend Developer & UI Designer</h2>
-            <p>Hi, I'm Jenny Kim. I'm a frontend developer and UI designer based in the Greater New York City Area. I design and develop user-centric products to bring people together.</p>
+            <p>Hey there! I'm <span className={styles.Text_Highlight}>Jenny &#8212;</span> <br/> a passinate  who loves to craft a digital experience based on the solid knowledges of coding. I can help to design and develop the website that bring people together. </p>
           </div>
         </div>
         <div className={styles.Graphic_Cont}>
-          <img 
-            className={styles.Graphic} 
-            src={graphic}
-            alt="Test Graphic"
-          />
+            <img 
+              className={styles.Graphic} 
+              src={graphic}
+              alt="Test Graphic"
+            />
         </div>
       </section>
       <div className={styles.Divider_Cont}>

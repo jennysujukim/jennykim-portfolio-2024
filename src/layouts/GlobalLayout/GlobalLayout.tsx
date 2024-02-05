@@ -25,7 +25,7 @@ export default function GlobalLayout() {
         className={`Container_X ${styles.Main_Cont}`}
         onClick={handleClose}
       >
-        <div className={styles.Width_Cont}>
+        <div className={styles.Width_Cont} >
           <Outlet />
           <footer className={styles.Footer_Cont}>
             <Footer />

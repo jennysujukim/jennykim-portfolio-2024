@@ -6,8 +6,8 @@ export default {
   desktopLg: 1920,
   sidebarHeight: 60,
   sidebarHeightOpen: '60vh',
-  sidebarWidth: 60,
-  sidebarWidthOpen: 400,
+  sidebarWidth: 55,
+  sidebarWidthOpen: 350,
   sidebarBtnHeight: 24,
 
   logoHeight_lap: 80,

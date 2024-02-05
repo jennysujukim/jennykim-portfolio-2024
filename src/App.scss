@@ -7,25 +7,20 @@ body {
   scrollbar-width: none; 
 }
 
-
-
-
 // CUSTOM SCROLLBAR //
-// ::-webkit-scrollbar {
-//   width: 7px;
-//   background: $primary-white;
-// }
+::-webkit-scrollbar {
+  width: 7px;
+  background: $primary-white;
+}
 
-// ::-webkit-scrollbar-track {
-//   background: $primary-white;
-// }
+::-webkit-scrollbar-track {
+  background: $primary-white;
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background: $secondary-grey;
-// }
+::-webkit-scrollbar-thumb {
+  background: $primary_blue;
+}
 
-// ::-webkit-scrollbar-thumb:hover {
-//   background: $primary-black;
-// }
-
-::-webkit-scrollbar { display: none; }
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-blue_dark;
+}

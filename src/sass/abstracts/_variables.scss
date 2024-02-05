@@ -1,8 +1,15 @@
 // COLOURS //
 $primary_white: #fffefa;
-$primary_black: #1d1d1d;
-$primary_grey: #ababab;
-$secondary_grey: #e0e0e0;
+$primary_black: #292929;
+$primary_grey: #6f6f6f;
+$primary_grey_dark: #ababab;
+$secondary_grey_dark: #e0e0e0;
+$secondary_grey: #efefef;
+$primary_blue: #0179ff;
+$primary_blue_dark: #0179ff;
+//$primary_blue: #5ea9fc;
+//$primary_blue_dark: #3D71AB;
+$secondary_blue: #cae3ff;
 
 // BREAKPOINTS //
 $breakpoints : (
@@ -43,10 +50,13 @@ $fs_h6_lap: 1rem;
 $fs_p_mob: 0.875rem;
 $fs_p_tab: 1rem;
 
+// BORDER RADIUS //
+$br_lap: 7px;
+
 // SPACING //
 $container_spacing_mob: 1rem;
 $container_spacing_tab: 1.5rem;
-$container_spacing_lap: 2rem;
+$container_spacing_lap: 3rem;
 
 $section_spacing_mob: 2.5rem;
 $section_spacing_tab: 3.5rem;
@@ -67,10 +77,12 @@ $mainContent_max_width: 1400px;
 
 $sidebar_height_mob: 60px;
 $sidebar_open_height_mob: 60vh;
-$sidebar_width_lap: 60px;
-$sidebar_open_width_lap: 400px;
+$sidebar_width_lap: 55px;
+$sidebar_open_width_lap: 350px;
 
-$mainContent_full_width_lap: calc(100vw - ($sidebar_width_lap + ($container_spacing_lap * 2) + $container_spacing_lap));
+$scrollbar_width: 7px;	
+
+$mainContent_full_width_lap: calc(100vw - ($sidebar_width_lap + ($container_spacing_lap * 2) + $container_spacing_lap + $scrollbar_width));
 $stickyContainer_width_lap: calc($mainContent_full_width_lap * 0.25);
 
 // SOLID BORDER //
