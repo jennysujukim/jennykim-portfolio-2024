@@ -1,7 +1,7 @@
 import { Project } from "../../../types/models/Project"
 import { useIndicatorContext } from "../../../hooks/useIndicatorContext";
-// styles
-import styles from './StickyContent.module.scss'
+// components
+import Tab from "../../../components/atoms/Tab";
 
 type StickyContentProps = {
   allProjects: Project[];
@@ -14,18 +14,14 @@ export default function StickyContent({ allProjects }: StickyContentProps) {
   return (
     <ul>
       {allProjects.map((project, index) => (
-        <li 
+        <Tab 
           key={index}
-          className={isActive === project.overview.id ? `${styles.Container} ${styles.Active}`: styles.Container }
-        >
-          <a href={`#${project.overview.id}`}>
-            <span className={isActive === project.overview.id ? `${styles.Work} ${styles.Active}`: styles.Work }>Work #{index + 1} {project.overview.discipline}</span>
-            <div className={styles.Title_Cont} >
-              <h5 className={isActive === project.overview.id ? `${styles.Title} ${styles.Active}`: styles.Title }>{project.overview.title}</h5>
-              {isActive === project.overview.id && <p className={styles.Bullet}>&bull;</p>}
-            </div>
-          </a>
-        </li>
+          text={project.overview.title}
+          isLink
+          href={project.overview.id}
+          smallText={`Work #${index + 1} ${project.overview.discipline}`}
+          isActive={isActive === project.overview.id}
+        />
       ))}
     </ul>
   )

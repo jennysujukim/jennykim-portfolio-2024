@@ -1,7 +1,7 @@
 import { useGetProjectsDataContext } from "../../../hooks/useGetProjectsDataContext"
 import { DisciplineType } from "../../../types/enums/DisciplineType"
 // components
-import FilterButton from "../../atoms/FilterButton"
+import Tab from "../../atoms/Tab"
 // styles
 import styles from './Filter.module.scss'
 
@@ -11,25 +11,29 @@ export default function Filter() {
 
   return (
     <ul className={styles.Wrapper}>
-      <FilterButton 
+      <Tab 
         text={DisciplineType.All}
-        isActive={isActive === DisciplineType.All}
+        isLink={false}
         handleClick={() => handleSetDiscipline(DisciplineType.All)}
+        isActive={isActive === DisciplineType.All}
       />
-      <FilterButton 
+      <Tab 
         text={DisciplineType.Frontend}
-        isActive={isActive === DisciplineType.Frontend}
+        isLink={false}
         handleClick={() => handleSetDiscipline(DisciplineType.Frontend)}
+        isActive={isActive === DisciplineType.Frontend}
       />
-      <FilterButton 
+      <Tab 
         text={DisciplineType.UIUX}
-        isActive={isActive === DisciplineType.UIUX}
+        isLink={false}
         handleClick={() => handleSetDiscipline(DisciplineType.UIUX)}
+        isActive={isActive === DisciplineType.UIUX}
       />
-      <FilterButton 
+      <Tab 
         text={DisciplineType.Graphic}
-        isActive={isActive === DisciplineType.Graphic}
+        isLink={false}
         handleClick={() => handleSetDiscipline(DisciplineType.Graphic)}
+        isActive={isActive === DisciplineType.Graphic}
       />
     </ul>
   )

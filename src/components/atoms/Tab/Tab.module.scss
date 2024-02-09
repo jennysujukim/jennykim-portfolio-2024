@@ -1,0 +1,53 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include lap {
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    border-bottom: $border_primary_grey;
+    margin-bottom: 1rem;
+    @include gridCol(auto, 3);
+    @include flexbox(unset, unset);
+  }
+
+  &.Active { 
+    @include lap { border-bottom: 1px solid $primary_blue_dark; }
+  }
+}
+
+.SmallText {
+  @include lap {
+    font-size: 0.7rem;
+    color: $primary_grey;
+  }
+
+  &.Active { 
+    @include lap { color: $primary_blue_dark; };
+  }
+}
+
+.Container {
+  @include flexbox(unset, flex-end);
+  width: 100%;
+}
+
+.Text_Cont {
+  @include lap {
+    width: 100%;
+    @include flexbox(space-between, center);
+    gap: 0.5rem;
+  }
+}
+
+.Text {
+  color: $primary_grey;
+  // @include lap { padding-top: 0.5rem; };
+
+  &.Active { 
+    @include lap { color: $primary_blue_dark; };
+  }
+}
+
+.Bullet {
+  color: $primary_blue_dark;
+}
