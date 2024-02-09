@@ -1,6 +1,8 @@
 @use '../../../sass/abstracts/' as *;
 
 .Wrapper {
+  cursor: pointer;
+
   @include lap {
     text-transform: uppercase;
     padding-bottom: 0.5rem;
@@ -29,6 +31,12 @@
 .Container {
   @include flexbox(unset, flex-end);
   width: 100%;
+
+  &_Home {
+    @include lap { width: 100%; };
+    
+  }
+  
 }
 
 .Text_Cont {
@@ -39,13 +47,14 @@
   }
 }
 
-.Text {
+.Text, .Text_Home {
   color: $primary_grey;
-  // @include lap { padding-top: 0.5rem; };
 
-  &.Active { 
-    @include lap { color: $primary_blue_dark; };
+  &_Home {
+    @include lap { padding-top: 0.5rem; };
   }
+
+  &.Active { @include lap { color: $primary_blue_dark; }; }
 }
 
 .Bullet {
