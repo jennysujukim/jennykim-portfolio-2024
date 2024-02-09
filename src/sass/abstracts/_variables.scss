@@ -83,7 +83,8 @@ $sidebar_open_width_lap: 350px;
 $scrollbar_width: 7px;	
 
 $mainContent_full_width_lap: calc(100vw - ($sidebar_width_lap + ($container_spacing_lap * 2) + $container_spacing_lap + $scrollbar_width));
-$stickyContainer_width_lap: calc($mainContent_full_width_lap * 0.25);
+$stickyContainer_width_lap: calc($mainContent_full_width_lap * 0.3);
+$stickyContainer_width_deskLg: 514px;
 
 // SOLID BORDER //
 $border_primary_black: 1px solid $primary_black;

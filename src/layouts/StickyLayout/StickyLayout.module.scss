@@ -15,10 +15,11 @@
     height: calc(100vh - ($section_spacing_lap * 2));
     top: 0;
   }
+  @include deskLg {
+    width: $stickyContainer_width_deskLg;
+  }
 }
 
 .Scroll_Cont {
-  @include lap {
-    flex: 1;
-  }
+  @include lap { flex: 1; }
 }

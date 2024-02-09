@@ -29,8 +29,8 @@ export default function Tab({
               {smallText}
             </span>
           }
-          <div className={styles.Text_Cont}>
-            <p className={isActive ? `H5_Style ${styles.Text_Home} ${styles.Active}` : `H5_Style ${styles.Text_Home}`}>
+          <div className={styles.Text_Cont_Home}>
+            <p className={isActive ? `H5_Style ${styles.Text} ${styles.Active}` : `H5_Style ${styles.Text}`}>
               {text}
             </p>
             {isActive && 
