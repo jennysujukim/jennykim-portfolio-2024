@@ -2,6 +2,6 @@
 
 .Wrapper {
   @include lap {
-    @include grid(repeat(12, 1fr), $gap_lap); };
-
+    @include grid(repeat(12, 1fr), 2rem); 
+  };
 }
