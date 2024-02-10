@@ -2,19 +2,19 @@
 
 .Wrapper {
   cursor: pointer;
-
-  @include lap {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  @include flexbox(unset, unset);
+  border-bottom: $border_primary_grey;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  @include tab {
     padding-bottom: 0.5rem;
-    border-bottom: $border_primary_grey;
     margin-bottom: 1rem;
-    @include gridCol(auto, 3);
-    @include flexbox(unset, unset);
+    @include gridCol(auto, 6);
   }
+  @include lap { @include gridCol(auto, 3); };
 
-  &.Active { 
-    @include lap { border-bottom: 1px solid $primary_blue_dark; }
-  }
+  &.Active { border-bottom: 1px solid $primary_blue_dark; }
 }
 
 .SmallText {
@@ -23,40 +23,28 @@
     color: $primary_grey;
   }
 
-  &.Active { 
-    @include lap { color: $primary_blue_dark; };
-  }
+  &.Active { color: $primary_blue_dark; };
 }
 
 .Container {
   @include flexbox(unset, flex-end);
   width: 100%;
 
-  &_Home {
-    @include lap { width: 100%; };
-    
-  }
-  
+  &_Home { @include lap { width: 100%; }; }
 }
 
-.Text_Cont {
-  @include lap {
-    width: 100%;
-    @include flexbox(space-between, center);
-    gap: 0.5rem;
-  }
+.Text_Cont, .Text_Cont_Home {
+  width: 100%;
+  @include flexbox(space-between, center);
+  @include lap { gap: 0.5rem; }
+
+  &_Home { @include lap { padding-top: 0.5rem; }; }
 }
 
-.Text, .Text_Home {
+.Text {
   color: $primary_grey;
 
-  &_Home {
-    @include lap { padding-top: 0.5rem; };
-  }
-
-  &.Active { @include lap { color: $primary_blue_dark; }; }
+  &.Active { color: $primary_blue_dark; };
 }
 
-.Bullet {
-  color: $primary_blue_dark;
-}
+.Bullet { color: $primary_blue_dark; }

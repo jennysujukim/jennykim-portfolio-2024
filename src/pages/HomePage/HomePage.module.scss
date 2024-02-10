@@ -64,7 +64,7 @@
   width: 200px;
   height: 200px;
   @include lap {
-    width: $stickyContainer_width_lap;
+    width: 100%;
     height: unset;
   }
 }

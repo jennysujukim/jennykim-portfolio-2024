@@ -52,7 +52,9 @@ export default function HomePage() {
       </div>
       <StickyLayout 
         stickyContent={<StickyContent allProjects={featuredWork} />}
-        scrollContent={<ScrollContent allProjects={featuredWork}/>}
+        stickyContentSpacing={false}
+        scrollContent={<ScrollContent allProjects={featuredWork} />}
+        scrollContentSpacing={true}
       />
       <div className={styles.Divider_Cont}>
         { isResponsive === BreakpointType.Mobile && <hr className="Line"></hr> }

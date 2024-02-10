@@ -46,16 +46,17 @@ export default function Card({ details }: CardProps) {
       className={styles.Wrapper}
       ref={targetRef}
     >
-      <div className={styles.Title_Cont}>
+      <div>
         {details.discipline.map((value, index) => (
           <span 
             key={index}
             className={styles.Discipline}
           >
             {value}
+            {index < details.discipline.length - 1 ? ', ' : ''}
           </span>
         ))}
-        <h2 className="H3_Style">{details.title}&nbsp;/&nbsp;</h2>
+        <h2 className={styles.Title}>{details.title}&nbsp;/&nbsp;</h2>
         <p className={styles.Type}>{details.type}</p>
       </div>
       <Link 
