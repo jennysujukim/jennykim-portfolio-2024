@@ -6,23 +6,10 @@
 }
 
 .Cards_Cont {
-  @include flexbox(center, center, column);
-
   @include lap {
     justify-content: unset;
     align-items: unset;
-    @include grid(repeat(12, 1fr), $gap_lap);
-    row-gap: 3rem;
+    @include grid(repeat(12, 1fr), 2rem);
   }
-}
-
-.Card_Cont {
-  width: 100%;
-  @include flexbox(center, center);
-
-  @include lap {
-    justify-content: unset;
-    align-items: unset;
-    @include gridCol(auto, 6);
-  }
+  @include desk { column-gap: 4rem; }
 }

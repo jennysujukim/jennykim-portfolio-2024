@@ -1,6 +1,6 @@
 export enum DisciplineType {
   All = 'All',
-  Frontend = 'Frontend Development',
+  Frontend = 'Frontend Dev',
   UIUX = 'UIUX Design',
   Graphic = 'Graphic Design',
   None = 'None',

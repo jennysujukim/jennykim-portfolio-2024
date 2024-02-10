@@ -7,7 +7,7 @@
   @include tab { padding-bottom: 9rem; }
   @include lap { 
     max-width: unset;
-    padding-bottom: $section_spacing_lap;
+    padding-bottom: 8rem;
   }
 }
 
@@ -67,4 +67,81 @@
   font-family: $helveticaNeue_medium;
   font-size: 0.8rem;
   margin-bottom: 0.2rem;
+}
+
+.Lists_Wrapper {
+  border-bottom: 1px solid $primary_grey;
+  position: relative;
+  overflow: hidden;
+  @include lap { margin-bottom: unset; };
+
+  &:hover {
+    .Lists_Bg { 
+      transform: translate(0, 0); 
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .Lists_Sub_Cont {
+      @include lap {
+        transform: translate(calc(50px + 1rem), 0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    .Lists_Title_Cont {
+      @include lap {
+        transform: translate(0, 0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.Lists_Bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: $secondary_grey;
+  transform: translate(0, 100%);
+}
+
+.Lists_Cont {
+  @include flexbox(unset, unset, column);
+  padding: 0.7rem 0.5rem;
+  @include lap { 
+    padding: 1rem 0.7rem;
+    @include flexbox(space-between, center, row); 
+  };
+}
+
+.Lists_Title_Cont {
+  order: 2;
+  margin-bottom: 0.5rem;
+  @include lap { 
+    order: unset;
+    margin-bottom: unset;
+    @include flexbox(flex-start, center);
+    transform: translate(calc(-50px - 1rem), 0);
+  }
+};
+
+.Lists_Sub_Cont { 
+  @include lap { @include flexbox(flex-end, center); }
+}
+
+.Lists_Sub_Arrow { 
+  display: none;
+  @include lap {
+    display: block;
+    margin-left: 1rem; 
+  }
+}
+
+.Lists_Title_Arrow { 
+  display: none;
+  @include lap {
+    display: block;
+    margin-right: 1rem;
+  }
 }
