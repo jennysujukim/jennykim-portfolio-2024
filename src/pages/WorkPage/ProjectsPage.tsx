@@ -1,7 +1,9 @@
 import { useGetProjectsDataContext } from "../../hooks/useGetProjectsDataContext"
+import { ViewByContextProvider } from "../../contexts/ViewByContext"
 // components
 import Filter from "../../components/organisms/Filter"
 import Card from "../../components/organisms/Card"
+import ViewBy from "../../components/organisms/ViewBy"
 // styles
 import styles from './ProjectsPage.module.scss'
 
@@ -10,9 +12,10 @@ export default function WorkPage() {
   const { isData } = useGetProjectsDataContext()
 
   return (
-    <div>
+    <ViewByContextProvider>
       <section className={styles.Filter_Cont}>
         <Filter />
+        <ViewBy />
       </section>
       <section className={`Section ${styles.Cards_Cont}`}>
         {isData && isData.map((project, index) => (
@@ -24,6 +27,6 @@ export default function WorkPage() {
           </div>
         ))}
       </section>
-    </div>
+    </ViewByContextProvider>
   )
 }
