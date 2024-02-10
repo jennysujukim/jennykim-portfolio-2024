@@ -20,16 +20,20 @@ export default function ViewBy() {
         <Icon 
           iconType="listIcon"
           contentFill={isSelected === ViewByType.LISTS ? Colours.primaryBlueDark : Colours.primaryGrey}
+          width="10px"
+          height="10px"
         />
       </button>
       <button 
-        className={isSelected === ViewByType.CARDS ? `${styles.Active} ${styles.Btn}` : styles.Btn} 
-        onClick={() => clickToSetView(ViewByType.CARDS)}
+        className={isSelected === ViewByType.GRIDS ? `${styles.Active} ${styles.Btn}` : styles.Btn} 
+        onClick={() => clickToSetView(ViewByType.GRIDS)}
       >
-        <span className={styles.Btn_Text}>Cards</span>
+        <span className={styles.Btn_Text}>Grids</span>
         <Icon 
           iconType="gridIcon"
-          contentFill={isSelected === ViewByType.CARDS ? Colours.primaryBlueDark : Colours.primaryGrey}
+          contentFill={isSelected === ViewByType.GRIDS ? Colours.primaryBlueDark : Colours.primaryGrey}
+          width="10px"
+          height="10px"
         />
       </button>
     </div>

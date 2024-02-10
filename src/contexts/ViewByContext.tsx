@@ -12,7 +12,7 @@ type ViewByContextProviderProps = {
 };
 
 const defaultContextValue: ViewByContextType = {
-  isSelected: ViewByType.CARDS,
+  isSelected: ViewByType.GRIDS,
   setIsSelected: () => {},
   clickToSetView: () => {}
 };
@@ -21,10 +21,10 @@ export const ViewByContext = createContext(defaultContextValue);
 
 export const ViewByContextProvider = ({ children }: ViewByContextProviderProps) => {
 
-  const [ isSelected, setIsSelected ] = useState(ViewByType.CARDS)
+  const [ isSelected, setIsSelected ] = useState(ViewByType.GRIDS)
 
   useEffect(() => {
-    const value = JSON.parse(localStorage.getItem('viewBy') || JSON.stringify(ViewByType.CARDS))
+    const value = JSON.parse(localStorage.getItem('viewBy') || JSON.stringify(ViewByType.GRIDS))
     setIsSelected(value)
   }, [isSelected])
 

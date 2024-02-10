@@ -16,7 +16,7 @@ export default function ProjectsContent() {
       {isData && isData.map((project, index) => (
         <div
           key={index}
-          className={isSelected === ViewByType.CARDS ? styles.Card_Cont : styles.Card_Cont_Lists}
+          className={isSelected === ViewByType.GRIDS ? styles.Card_Cont : styles.Card_Cont_Lists}
         >
           <Card details={project.overview} />
         </div>

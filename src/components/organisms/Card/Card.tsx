@@ -4,10 +4,12 @@ import { ProjectOverview } from "../../../types/models/ProjectOverview"
 import { useIndicatorContext } from "../../../hooks/useIndicatorContext";
 import { useViewByContext } from "../../../hooks/useViewByContext";
 import { ViewByType } from "../../../types/enums/ViewByType";
+import Colours from "../../../types/constants/Colours";
 // assets
 import testImage from "../../../assets/images/projects/thumbnail-test.png"
 // components
 import CtaButton from "../../atoms/CtaButton";
+import Icon from "../../atoms/Icon";
 // styles
 import styles from './Card.module.scss'
 
@@ -50,31 +52,47 @@ export default function Card({ details }: CardProps) {
         className={styles.Lists_Wrapper}
         ref={targetRef}
       >
-
+        <div className={styles.Lists_Bg}></div>
         <Link 
           to={details.link}
           className={styles.Lists_Cont}
         >
           <div className={styles.Lists_Title_Cont}>
+            <div className={styles.Lists_Title_Arrow}>
+              <Icon 
+                iconType="arrowIcon" 
+                svgFill="none"
+                contentFill={Colours.primaryBlack} 
+                width="50px"
+              />
+            </div>
             <h2 className={styles.Title}>{details.title}&nbsp;/&nbsp;</h2>
             <p className={styles.Type}>{details.type}</p>
           </div>
-          <div>
+          <div className={styles.Lists_Sub_Cont}>
             {details.discipline.map((value, index) => (
               <span 
                 key={index}
                 className={styles.Discipline}
               >
                 {value}
-                {index < details.discipline.length - 1 ? ', ' : ''}
+                {index < details.discipline.length - 1 ? `, ` : ''}
               </span>
             ))}
+            <div className={styles.Lists_Sub_Arrow}>
+              <Icon 
+                iconType="arrowIcon" 
+                svgFill="none"
+                contentFill={Colours.primaryBlack} 
+                width="50px"
+              />
+            </div>
           </div>
         </Link>
 
       </article>
     )}
-    {isSelected === ViewByType.CARDS && (
+    {isSelected === ViewByType.GRIDS && (
       <article 
         id={details.id}
         className={styles.Wrapper}
