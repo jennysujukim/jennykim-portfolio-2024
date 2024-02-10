@@ -1,0 +1,12 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  width: 10px;
+  height: 10px;
+  @include flexbox(center, center);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

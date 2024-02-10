@@ -1,0 +1,86 @@
+@use '../../../sass/abstracts/' as *;
+
+$sidebar_spacing_basic: 1rem;
+
+.Wrapper {
+  z-index: 100;
+  background: $primary_white; 
+  @include lap {
+    height: 100vh;
+    @include flexbox(unset, unset, column);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.Container {
+  width: 100vw;
+  border-top: $border_primary_black;
+  position: relative;
+  // background: $primary_blue;
+  // background: linear-gradient(219deg, $primary_blue 0%, $secondary_blue 100%);
+
+  @include lap {
+    width: unset;
+    height: 100%;
+    border: $border_primary_black;
+    @include flexbox(unset, center);
+  }
+}
+
+.Btns_Cont {
+  width: 100%;
+  height: $sidebar_height_mob;
+  @include flexbox(space-between, center);
+  position: fixed;
+  bottom: 0;
+  @include lap {
+    position: unset;
+    width: unset;
+    min-width: $sidebar_width_lap;
+    height: 100%;
+    flex-direction: column;
+  }
+}
+
+.Submark_Cont {
+  padding-left: $sidebar_spacing_basic;
+  @include lap { 
+    padding-left: unset;
+    padding-top: $sidebar_spacing_basic; 
+  }
+}
+
+.MenuBtn_Cont {
+  width: fit-content;
+  @include absoluteCenterHorizontal;
+  @include flexbox(center, center);
+  @include lap {
+    width: unset;
+    display: unset;
+    position: unset;
+    margin: unset;
+    left: unset;
+    right: unset;
+    height: fit-content;
+    @include absoluteCenterVertical(center);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+.ThemeBtn_Cont {
+  padding-right: $sidebar_spacing_basic;
+  @include lap { 
+    padding-right: unset;
+    padding-bottom: $sidebar_spacing_basic; 
+  };
+}

@@ -1,0 +1,18 @@
+@use '../../sass/abstracts/' as *;
+
+.Filter_Cont {
+  padding-top: 2.5rem;
+  @include lap { padding-top: 3rem; }
+}
+
+.Cards_Cont {
+  @include flexbox(center, center, column);
+
+  @include lap {
+    justify-content: unset;
+    align-items: unset;
+    @include grid(repeat(12, 1fr), 2rem);
+    row-gap: 3rem;
+  }
+  @include desk { column-gap: 4rem; }
+}
