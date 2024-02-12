@@ -1,5 +1,75 @@
 @use '../../../sass/abstracts/' as *;
 
-.Image {
-  width: 40%;
+.Wrapper {
+  @include grid(repeat(12, 1fr), 3rem);
+}
+
+.Img_Cont {
+  overflow: hidden;
+  @include gridCol(auto, 4);
+
+  img { width: 100%; }
+}
+
+.Content_Cont {
+  @include gridCol(auto, 8);
+  @include flexbox(space-between, flex-start, column);
+}
+
+.Title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.Info_Text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.Info_Highlight {
+  color: $primary_blue_dark;
+  font-family: $helveticaNeue_roman;
+
+  background: 
+  linear-gradient(to right, $secondary_blue, $secondary_blue),
+  linear-gradient(to right, $secondary_blue, $primary_blue_dark);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms ease-in-out;
+}
+
+.Info_Highlight:hover {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
+.Info_Cta_Cont {
+  margin-top: 1rem;
+}
+
+.Cta_Email {
+  font-family: $helveticaNeue_roman;
+  color: $primary_blue_dark;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  width: fit-content;
+}
+
+.Socials_Cont {
+  a {
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $primary_blue_dark;
+    }
+  }
+}
+
+.Copy_Cont {
+  margin-top: 4.5rem;
+  @include gridCol(auto, 12);
+  @include flexbox(space-between, center);
 }

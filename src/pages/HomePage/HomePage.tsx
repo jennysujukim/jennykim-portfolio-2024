@@ -1,11 +1,10 @@
 import { getProjectsData } from "../../utils/getProjectsData"
-import useResponsive from "../../hooks/useResponsive"
-import { BreakpointType } from "../../types/enums/BreakpointType"
 import { Project } from "../../types/models/Project"
 // assets
 import logo from '../../assets/images/jennykim-type.svg'
-import graphic from '../../assets/images/global/graphic-test.png'
+import graphic from '../../assets/images/global/vinyl-test.jpg'
 // components
+import H3Heading from "../../components/atoms/H3Heading"
 import StickyLayout from '../../layouts/StickyLayout'
 import ScrollContent from './ScrollContent'
 import StickyContent from './Stickycontent'
@@ -13,8 +12,6 @@ import StickyContent from './Stickycontent'
 import styles from './HomePage.module.scss'
 
 export default function HomePage() {
-
-  const isResponsive = useResponsive()
 
   const allProjects = getProjectsData().projects
   const firstProject = allProjects.find((project) => project.overview.link === "/work/sadie-lee-cms-service")
@@ -45,22 +42,13 @@ export default function HomePage() {
             />
         </div>
       </section>
-      <div className={styles.Divider_Cont}>
-        { isResponsive === BreakpointType.Mobile && <hr className="Line"></hr> }
-        <h3>Featured Work</h3>
-        { isResponsive !== BreakpointType.Mobile && <hr className="Line_Spacing"></hr> }
-      </div>
+      <H3Heading text="Featured Work" />
       <StickyLayout 
         stickyContent={<StickyContent allProjects={featuredWork} />}
         stickyContentSpacing={false}
         scrollContent={<ScrollContent allProjects={featuredWork} />}
         scrollContentSpacing={true}
       />
-      <div className={styles.Divider_Cont}>
-        { isResponsive === BreakpointType.Mobile && <hr className="Line"></hr> }
-        <h3>Let's Connect</h3>
-        { isResponsive !== BreakpointType.Mobile && <hr className="Line_Spacing"></hr> }
-      </div>
     </>
   )
 }
