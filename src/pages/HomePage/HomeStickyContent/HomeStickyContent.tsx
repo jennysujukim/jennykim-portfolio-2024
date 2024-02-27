@@ -9,7 +9,7 @@ type StickyContentProps = {
   allProjects: Project[];
 }
 
-export default function StickyContent({ allProjects }: StickyContentProps) {
+export default function HomeStickyContent({ allProjects }: StickyContentProps) {
 
   const { isActive } = useIndicatorContext();
   const isResponsive = useResponsive();
