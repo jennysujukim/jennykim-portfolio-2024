@@ -2,13 +2,13 @@ import { Project } from '../../../types/models/Project'
 // components
 import Card from '../../../components/organisms/Card'
 // styles
-import styles from './ScrollContent.module.scss'
+import styles from './HomeScrollContent.module.scss'
 
 type ScrollContentProps = {
   allProjects: Project[];
 }
 
-export default function ScrollContent({ allProjects }: ScrollContentProps) {
+export default function HomeScrollContent({ allProjects }: ScrollContentProps) {
 
   return (
     <div className={styles.Wrapper}>

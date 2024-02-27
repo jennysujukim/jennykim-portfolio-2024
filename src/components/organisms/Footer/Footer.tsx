@@ -46,12 +46,6 @@ export default function Footer() {
             <p className={styles.Info_Text}>Currently <span className={styles.Info_Highlight}>seeking a new opportunity</span> with a company that influences positivity, loves tackling problems with a dash of creativity.</p>
             <p className={styles.Info_Text}>If you have any topics to discuss with me, feel free to <span className={styles.Info_Highlight}>send an email</span> to me.</p>
             <div className={styles.Info_Cta_Cont}>
-              <a
-                className={styles.Cta_Email} 
-                href="mailto:jennysujukim@gmail.com"
-              >
-                jennysujukim@gmail.com
-              </a>
               <CtaButton text="Read More About Me" href="/about" />
             </div>
           </div>

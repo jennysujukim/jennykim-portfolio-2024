@@ -6,8 +6,8 @@ import graphic from '../../assets/images/global/vinyl-test.jpg'
 // components
 import H3Heading from "../../components/atoms/H3Heading"
 import StickyLayout from '../../layouts/StickyLayout'
-import ScrollContent from './ScrollContent'
-import StickyContent from './Stickycontent'
+import HomeScrollContent from './HomeScrollContent'
+import HomeStickyContent from './HomeStickyContent'
 // styles
 import styles from './HomePage.module.scss'
 
@@ -44,9 +44,9 @@ export default function HomePage() {
       </section>
       <H3Heading text="Featured Work" />
       <StickyLayout 
-        stickyContent={<StickyContent allProjects={featuredWork} />}
+        stickyContent={<HomeStickyContent allProjects={featuredWork} />}
         stickyContentSpacing={false}
-        scrollContent={<ScrollContent allProjects={featuredWork} />}
+        scrollContent={<HomeScrollContent allProjects={featuredWork} />}
         scrollContentSpacing={true}
       />
     </>
