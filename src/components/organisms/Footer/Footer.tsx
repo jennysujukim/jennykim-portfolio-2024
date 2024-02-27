@@ -6,6 +6,7 @@ import H3Heading from '../../atoms/H3Heading'
 import CtaButton from '../../atoms/CtaButton'
 // styles
 import styles from './Footer.module.scss'
+import UpRightButton from '../../atoms/UpRightButton';
 
 export default function Footer() {
 
@@ -49,11 +50,25 @@ export default function Footer() {
               <CtaButton text="Read More About Me" href="/about" />
             </div>
           </div>
-          <div className={styles.Socials_Cont}>
+          <div>
             <p className={`H5_Style ${styles.Title}`}>Find Me On</p>
-            <a href="https://github.com/jennysujukim" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/jenny-seojeong-kim/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/jklemonjuice/" target="_blank">Instagram</a>
+            <div className={styles.Social_Cta_Cont}>
+              <UpRightButton 
+                text="GitHub"
+                href="https://github.com/jennysujukim"
+                isExternal={true}
+              />
+              <UpRightButton 
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/jenny-seojeong-kim/"
+                isExternal={true}
+              />
+              <UpRightButton 
+                text="Instagram"
+                href="https://www.instagram.com/jklemonjuice/"
+                isExternal={true}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.Copy_Cont}>

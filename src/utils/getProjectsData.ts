@@ -8,7 +8,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-1",
           discipline: [ DisciplineType.Frontend ],
-          type: "Client Project",
+          type: "Client Work",
           title: "Headless CMS Website",
           keywords: "Wordpress, Next.js",
           timeline: '3 months',
@@ -57,7 +57,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-2",
           discipline: [ DisciplineType.Frontend ],
-          type: "Company Project @PhoneBox",
+          type: "Company Work @PhoneBox",
           title: "Partner Portal Mobile App",
           keywords: "React Native, Expo",
           timeline: '3 months',
@@ -102,7 +102,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-3",
           discipline: [ DisciplineType.Frontend, DisciplineType.UIUX ],
-          type: "Personal Project",
+          type: "Personal Work",
           title: "Daily Protein Tracker Web App",
           keywords: "MERN, TypeScript",
           timeline: '3 weeks',
@@ -182,7 +182,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-4",
           discipline: [ DisciplineType.Frontend, DisciplineType.UIUX ],
-          type: "Personal Project",
+          type: "Personal Work",
           title: "Typography Website",
           keywords: "HTML, CSS, JavaScript",
           timeline: '2 weeks',
@@ -260,7 +260,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-5",
           discipline: [ DisciplineType.UIUX ],
-          type: "Personal Project",
+          type: "Personal Work",
           title: "Habit Tracker App",
           keywords: "Figma, Adobe Illustrator",
           timeline: '2 weeks',
@@ -308,7 +308,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-6",
           discipline: [ DisciplineType.Graphic ],
-          type: "Company Project @X NIHILO",
+          type: "Company Work @X NIHILO",
           title: "Brand Identity Design",
           keywords: "Content Creation, Graphic Design, Digital Marketing",
           timeline: '1 year',
@@ -356,7 +356,7 @@ export const getProjectsData = () => {
         overview: {
           id: "work-7",
           discipline: [ DisciplineType.Graphic ],
-          type: "Client Project @PAR BAR",
+          type: "Client Work @PAR BAR",
           title: "Logo ideation and design",
           keywords: "Logo design, graphic design",
           timeline: '3 weeks',
