@@ -4,9 +4,11 @@ import graphic from '../../../assets/images/global/footer-test.jpg'
 // components
 import H3Heading from '../../atoms/H3Heading'
 import CtaButton from '../../atoms/CtaButton'
+import InlineLinking from '../../atoms/InlineLinking';
+import Highlight from '../../atoms/Highlight';
+import UpRightButton from '../../atoms/UpRightButton';
 // styles
 import styles from './Footer.module.scss'
-import UpRightButton from '../../atoms/UpRightButton';
 
 export default function Footer() {
 
@@ -44,8 +46,12 @@ export default function Footer() {
         <div className={styles.Content_Cont}>
           <div className={styles.Info_Cont}>
             <p className={`H5_Style ${styles.Title}`}>Thanks for visiting!</p>
-            <p className={styles.Info_Text}>Currently <span className={styles.Info_Highlight}>seeking a new opportunity</span> with a company that influences positivity, loves tackling problems with a dash of creativity.</p>
-            <p className={styles.Info_Text}>If you have any topics to discuss with me, feel free to <span className={styles.Info_Highlight}>send an email</span> to me.</p>
+            <p className={styles.Info_Text}>
+              Currently <Highlight text="seeking a new opportunity" /> with a company that influences positivity, loves tackling problems with a dash of creativity.
+            </p>
+            <p className={styles.Info_Text}>
+              If you have any topics to discuss with me, feel free to <InlineLinking isTooltip isClipboard text="send an email" TooltipText="Click to Copy Email" /> to me.
+            </p>
             <div className={styles.Info_Cta_Cont}>
               <CtaButton text="Read More About Me" href="/about" />
             </div>
