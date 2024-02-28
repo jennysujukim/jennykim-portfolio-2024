@@ -4,6 +4,9 @@ import graphic from '../../../assets/images/global/footer-test.jpg'
 // components
 import H3Heading from '../../atoms/H3Heading'
 import CtaButton from '../../atoms/CtaButton'
+import InlineLinking from '../../atoms/InlineLinking';
+import Highlight from '../../atoms/Highlight';
+import UpRightButton from '../../atoms/UpRightButton';
 // styles
 import styles from './Footer.module.scss'
 
@@ -43,17 +46,35 @@ export default function Footer() {
         <div className={styles.Content_Cont}>
           <div className={styles.Info_Cont}>
             <p className={`H5_Style ${styles.Title}`}>Thanks for visiting!</p>
-            <p className={styles.Info_Text}>Currently <span className={styles.Info_Highlight}>seeking a new opportunity</span> with a company that influences positivity, loves tackling problems with a dash of creativity.</p>
-            <p className={styles.Info_Text}>If you have any topics to discuss with me, feel free to <span className={styles.Info_Highlight}>send an email</span> to me.</p>
+            <p className={styles.Info_Text}>
+              Currently <Highlight text="seeking a new opportunity" /> with a company that influences positivity, loves tackling problems with a dash of creativity.
+            </p>
+            <p className={styles.Info_Text}>
+              If you have any topics to discuss with me, feel free to <InlineLinking isTooltip isClipboard text="send an email" TooltipText="Click to Copy Email" /> to me.
+            </p>
             <div className={styles.Info_Cta_Cont}>
               <CtaButton text="Read More About Me" href="/about" />
             </div>
           </div>
-          <div className={styles.Socials_Cont}>
+          <div>
             <p className={`H5_Style ${styles.Title}`}>Find Me On</p>
-            <a href="https://github.com/jennysujukim" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/jenny-seojeong-kim/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/jklemonjuice/" target="_blank">Instagram</a>
+            <div className={styles.Social_Cta_Cont}>
+              <UpRightButton 
+                text="GitHub"
+                href="https://github.com/jennysujukim"
+                isExternal={true}
+              />
+              <UpRightButton 
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/jenny-seojeong-kim/"
+                isExternal={true}
+              />
+              <UpRightButton 
+                text="Instagram"
+                href="https://www.instagram.com/jklemonjuice/"
+                isExternal={true}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.Copy_Cont}>

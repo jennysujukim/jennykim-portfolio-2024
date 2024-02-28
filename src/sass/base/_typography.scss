@@ -30,7 +30,7 @@
 
 body {
   font-family: $helveticaNeue_light;
-  line-height: 1.2;
+  line-height: 1.4;
   color: $primary_black;
 }
 
@@ -75,4 +75,5 @@ h6, .H6_Style {
 p, .P_Style {
 	font-size: $fs_p_mob;
 	@include tab { font-size: $fs_p_tab; }
+	@include lap { font-size: $fs_p_lap; }
 }

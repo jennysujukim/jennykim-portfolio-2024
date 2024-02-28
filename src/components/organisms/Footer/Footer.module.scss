@@ -23,40 +23,15 @@
 
 .Info_Text {
   font-size: 1.5rem;
-  line-height: 1.5;
   margin-bottom: 0.5rem;
-}
-
-.Info_Highlight {
-  color: $primary_blue_dark;
-  font-family: $helveticaNeue_roman;
-
-  background: 
-  linear-gradient(to right, $secondary_blue, $secondary_blue),
-  linear-gradient(to right, $secondary_blue, $primary_blue_dark);
-  background-size: 100% 0.1em, 0 0.1em;
-  background-position: 100% 100%, 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms ease-in-out;
-}
-
-.Info_Highlight:hover {
-  background-size: 0 0.1em, 100% 0.1em;
 }
 
 .Info_Cta_Cont {
   margin-top: 1rem;
 }
 
-.Socials_Cont {
-  a {
-    margin-right: 1.5rem;
-    font-size: 1.5rem;
-
-    &:hover {
-      color: $primary_blue_dark;
-    }
-  }
+.Social_Cta_Cont {
+  @include flexbox(flex-start, center);
 }
 
 .Copy_Cont {
