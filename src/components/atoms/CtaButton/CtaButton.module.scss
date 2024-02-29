@@ -2,16 +2,36 @@
 
 .Container {
   display: inline-block;
+  border: $border_primary_black;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    color: $primary_blue_dark;
+    border-color: $primary_blue_dark;
+
+    .Bottom, .Top {
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.Top, .Bottom {
+  @include flexbox(center, center);
+  padding: 0.5rem 0.7rem;
+}
+
+.Bottom {
+  position: absolute;
 }
 
 .Text {
   width: fit-content;
   text-transform: uppercase;
-  white-space: nowrap;
   font-family: $helveticaNeue_medium;
   font-size: $fs_p_mob;
-  padding: 0.5rem 0.7rem;
-  border: $border_primary_black;
+  margin: 0 0.5rem;
 
   @include tab { font-size: $fs_p_tab; }
 }
