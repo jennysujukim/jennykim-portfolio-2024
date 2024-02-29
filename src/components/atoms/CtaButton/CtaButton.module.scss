@@ -1,18 +1,25 @@
 @use '../../../sass/abstracts/' as *;
 
 .Container {
-  display: inline-block;
+  @include flexbox(center, center, column);
   border: $border_primary_black;
   overflow: hidden;
   position: relative;
+  @include tab { display: inline-block; }
 
   &:hover {
     color: $primary_blue_dark;
     border-color: $primary_blue_dark;
 
-    .Bottom, .Top {
+    .Top {
       transform: translateY(-100%);
       transition: all 0.3s ease-in-out;
+    }
+
+    .Bottom {
+      transform: translateY(0);
+      transition: all 0.3s ease-in-out;
+      @include tab { transform: translateY(-100%); }
     }
   }
 }
@@ -24,6 +31,8 @@
 
 .Bottom {
   position: absolute;
+  transform: translateY(100%);
+  @include tab { transform: unset; };
 }
 
 .Text {
