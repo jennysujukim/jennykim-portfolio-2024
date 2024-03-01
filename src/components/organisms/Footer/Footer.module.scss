@@ -1,19 +1,42 @@
 @use '../../../sass/abstracts/' as *;
 
 .Wrapper {
-  @include grid(repeat(12, 1fr), 3rem);
+  margin-bottom: $sidebar_height_mob;
+
+  @include lap {
+    margin-bottom: unset;
+    @include grid(repeat(12, 1fr), 3rem);
+  }
 }
 
 .Img_Cont {
   overflow: hidden;
-  @include gridCol(auto, 4);
+  @include flexbox(center, center);
+  @include lap { 
+    display: block;
+    @include gridCol(auto, 4);
+  }
+}
 
-  img { width: 100%; }
+.Img {
+  width: $graphic_mob;
+  height: $graphic_mob;
+  @include lap {
+    width: 100%;
+    height: unset;
+  }
 }
 
 .Content_Cont {
-  @include gridCol(auto, 8);
-  @include flexbox(space-between, flex-start, column);
+  margin-top: 2.5rem;
+  text-align: center;
+
+  @include lap {
+    margin-top: unset;
+    text-align: unset;
+    @include gridCol(auto, 8);
+    @include flexbox(space-between, flex-start, column);
+  }
 }
 
 .Title {
@@ -21,21 +44,44 @@
   margin-bottom: 1rem;
 }
 
+.Info_Cont {
+  margin-bottom: 3rem;
+  @include lap { margin-bottom: 3rem; }
+}
+
 .Info_Text {
-  font-size: 1.5rem;
   margin-bottom: 0.5rem;
+
+  @include lap { font-size: 1.5rem; }
 }
 
 .Info_Cta_Cont {
-  margin-top: 1rem;
+  margin-top: 2rem;
+
 }
 
 .Social_Cta_Cont {
-  @include flexbox(flex-start, center);
+  @include flexbox(center, center);
+  @include lap { justify-content: flex-start };
 }
 
 .Copy_Cont {
   margin-top: 4.5rem;
-  @include gridCol(auto, 12);
-  @include flexbox(space-between, center);
+  text-align: center;
+
+  @include lap {
+    @include gridCol(auto, 12);
+    @include flexbox(space-between, center);
+  }
+}
+
+.Location {
+  @include flexbox(center, center);
+  margin-bottom: 0.5rem;
+
+  @include lap { margin-bottom: unset; }
+}
+
+.Location_Icon {
+  margin-right: 0.2rem;
 }

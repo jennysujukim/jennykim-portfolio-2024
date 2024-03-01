@@ -55,7 +55,10 @@
 
 .Detail_Wrapper {
   margin-bottom: 1.5rem;
-  @include tab { margin-bottom: unset; }
+  @include tab { 
+    margin-bottom: unset; 
+    flex: 1;
+  }
 }
 
 .Detail_Cont {

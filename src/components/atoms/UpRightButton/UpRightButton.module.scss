@@ -2,11 +2,13 @@
 
 .Container {
   margin-right: 1.5rem;
-  font-size: 1.5rem;
   overflow: hidden;
   position: relative;
+  @include lap { font-size: 1.5rem;  };
 
   &:hover { color: $primary_blue_dark; }
+
+  &:last-child { margin-right: unset; }
 }
 
 .Bottom {

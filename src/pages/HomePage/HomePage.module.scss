@@ -61,8 +61,8 @@
 }
 
 .Graphic {
-  width: 200px;
-  height: 200px;
+  width: $graphic_mob;
+  height: $graphic_mob;
   @include lap {
     width: 100%;
     height: unset;

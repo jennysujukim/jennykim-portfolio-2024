@@ -6,13 +6,13 @@
 }
 
 .Clipboard_Cont {
-  font-size: 1.5rem;
+  @include lap { font-size: 1.5rem; };
 }
 
 .Tooltip {
   display: none;
   position: absolute;
-  top: -50%;
+  top: -80%;
   left: 0;
   right: 0;
   margin: auto;
@@ -25,6 +25,11 @@
   padding: 0.1rem 0.5rem;
   border-radius: 40px;
   transition: all 0.3s ease-in-out;
+
+  @include lap {
+    top: -60%;
+    font-size: 0.9rem;
+  }
 }
 
 .Wrapper:hover .Tooltip {
@@ -34,6 +39,7 @@
 .Container {
   color: $primary_blue_dark;
   font-family: $helveticaNeue_roman;
+  @include lap { font-size: 1.5rem; };
 
   background: 
   linear-gradient(to right, $secondary_blue, $secondary_blue),

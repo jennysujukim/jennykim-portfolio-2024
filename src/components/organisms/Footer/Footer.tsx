@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 // assets
 import graphic from '../../../assets/images/global/footer-test.jpg'
+import { IoLocationOutline } from "react-icons/io5";
 // components
 import H3Heading from '../../atoms/H3Heading'
 import CtaButton from '../../atoms/CtaButton'
@@ -41,7 +42,11 @@ export default function Footer() {
       <H3Heading text="Let's Connect" />
       <div className={`Section ${styles.Wrapper}`}>
         <div className={styles.Img_Cont}>
-          <img src={graphic} alt="Test graphic" />
+          <img 
+            className={styles.Img}
+            src={graphic} 
+            alt="Test graphic" 
+          />
         </div>
         <div className={styles.Content_Cont}>
           <div className={styles.Info_Cont}>
@@ -50,7 +55,7 @@ export default function Footer() {
               Currently <Highlight text="seeking a new opportunity" /> with a company that influences positivity, loves tackling problems with a dash of creativity.
             </p>
             <p className={styles.Info_Text}>
-              If you have any topics to discuss with me, feel free to <InlineLinking isTooltip isClipboard text="send an email" TooltipText="Click to Copy Email" /> to me.
+              If you have any topics to discuss with me, feel free to <InlineLinking isTooltip isClipboard text="send an email [ jennysujukim@gmail.com ]" TooltipText="Click to Copy Email" />
             </p>
             <div className={styles.Info_Cta_Cont}>
               <CtaButton text="Read More About Me" href="/about" />
@@ -78,7 +83,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.Copy_Cont}>
-          <p>Vancouver, Canada | {isTime}</p>
+          <p className={styles.Location}><IoLocationOutline className={styles.Location_Icon} /> Vancouver, Canada | {isTime}</p>
           <p>&copy; 2024 Jenny Seojeong Kim</p>
         </div>
       </div>
