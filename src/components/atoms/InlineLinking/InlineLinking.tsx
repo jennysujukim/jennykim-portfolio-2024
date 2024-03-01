@@ -40,7 +40,7 @@ export default function InlineLinking({
                 text="jennysujukim@gmail.com" 
                 onCopy={() => onCopyClipboard()}
               >
-                <button className={styles.Clipboard_Cont}>
+                <button className={`P_Style ${styles.Clipboard_Cont}`}>
                   <span className={styles.Tooltip}>{tooltipText}</span>
                   <span className={styles.Container}>{text}</span>
                 </button>

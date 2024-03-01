@@ -87,6 +87,8 @@ $mainContent_full_width_lap: calc(100vw - ($sidebar_width_lap + ($container_spac
 $stickyContainer_width_lap: calc($mainContent_full_width_lap * 0.3);
 $stickyContainer_width_deskLg: 514px;
 
+$graphic_mob: 200px; 
+
 // SOLID BORDER //
 $border_primary_black: 1px solid $primary_black;
 $border_primary_white: 1px solid $primary_white;
