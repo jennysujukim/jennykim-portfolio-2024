@@ -1,0 +1,55 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.Clipboard_Cont {
+  @include lap { font-size: 1.5rem; };
+}
+
+.Tooltip {
+  display: none;
+  position: absolute;
+  top: -80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 0.7rem;
+  font-family: $helveticaNeue_roman;
+  color: $primary_blue_dark;
+  background-color: $secondary_blue;
+  text-align: center;
+  width: fit-content;
+  padding: 0.1rem 0.5rem;
+  border-radius: 40px;
+  transition: all 0.3s ease-in-out;
+
+  @include lap {
+    top: -60%;
+    font-size: 0.9rem;
+  }
+}
+
+.Wrapper:hover .Tooltip {
+  display: block;
+}
+
+.Container {
+  color: $primary_blue_dark;
+  font-family: $helveticaNeue_roman;
+  @include lap { font-size: 1.5rem; };
+
+  background: 
+  linear-gradient(to right, $secondary_blue, $secondary_blue),
+  linear-gradient(to right, $secondary_blue, $primary_blue_dark);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms ease-in-out;
+
+  &:hover {
+    background-size: 0 0.1em, 100% 0.1em;
+  }
+}

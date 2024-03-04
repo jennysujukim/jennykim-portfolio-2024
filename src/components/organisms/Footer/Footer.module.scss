@@ -1,0 +1,87 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  margin-bottom: $sidebar_height_mob;
+
+  @include lap {
+    margin-bottom: unset;
+    @include grid(repeat(12, 1fr), 3rem);
+  }
+}
+
+.Img_Cont {
+  overflow: hidden;
+  @include flexbox(center, center);
+  @include lap { 
+    display: block;
+    @include gridCol(auto, 4);
+  }
+}
+
+.Img {
+  width: $graphic_mob;
+  height: $graphic_mob;
+  @include lap {
+    width: 100%;
+    height: unset;
+  }
+}
+
+.Content_Cont {
+  margin-top: 2.5rem;
+  text-align: center;
+
+  @include lap {
+    margin-top: unset;
+    text-align: unset;
+    @include gridCol(auto, 8);
+    @include flexbox(space-between, flex-start, column);
+  }
+}
+
+.Title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.Info_Cont {
+  margin-bottom: 3rem;
+  @include lap { margin-bottom: 3rem; }
+}
+
+.Info_Text {
+  margin-bottom: 0.5rem;
+
+  @include lap { font-size: 1.5rem; }
+}
+
+.Info_Cta_Cont {
+  margin-top: 2rem;
+
+}
+
+.Social_Cta_Cont {
+  @include flexbox(center, center);
+  @include lap { justify-content: flex-start };
+}
+
+.Copy_Cont {
+  margin-top: 4.5rem;
+  text-align: center;
+
+  @include lap {
+    @include gridCol(auto, 12);
+    @include flexbox(space-between, center);
+  }
+}
+
+.Location {
+  @include flexbox(center, center);
+  margin-bottom: 0.5rem;
+
+  @include lap { margin-bottom: unset; }
+}
+
+.Location_Icon {
+  margin-right: 0.2rem;
+}

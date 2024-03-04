@@ -1,0 +1,79 @@
+@use '../abstracts/' as *;
+
+@font-face {
+	font-family: $helveticaNeue_light;
+	font-display: swap;
+  font-weight: 300;
+	src: url('../../assets/fonts/HelveticaNeue-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: $helveticaNeue_roman;
+	font-display: swap;
+  font-weight: 400;
+	src: url('../../assets/fonts/HelveticaNeue-Roman.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: $helveticaNeue_medium;
+	font-display: swap;
+  font-weight: 500;
+	src: url('../../assets/fonts/HelveticaNeue-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: $helveticaNeue_heavy;
+	font-display: swap;
+  font-weight: 600;
+	src: url('../../assets/fonts/HelveticaNeue-Heavy.woff2') format('woff2');
+}
+
+body {
+  font-family: $helveticaNeue_light;
+  line-height: 1.4;
+  color: $primary_black;
+}
+
+h2, .H2_Style {
+  font-family: $helveticaNeue_medium;
+  font-size: $fs_h2_mob;
+  @include tab { font-size: $fs_h2_tab; }
+  @include lap { font-size: $fs_h2_lap; }
+}
+
+h3, .H3_Style {
+	font-family: $helveticaNeue_medium;
+	font-size: $fs_h3_mob;
+	text-transform: uppercase;
+	@include tab { font-size: $fs_h3_tab; }
+  @include lap { font-size: $fs_h3_lap; }
+}
+
+h4, .H4_Style {
+	font-family: $helveticaNeue_roman;
+	font-size: $fs_h4_mob;
+	text-transform: uppercase;
+	@include tab { font-size: $fs_h4_tab; }
+	@include lap { font-size: $fs_h4_lap; }
+}
+
+h5, .H5_Style {
+	font-family: $helveticaNeue_roman;
+	font-size: $fs_h5_mob;
+	@include tab { font-size: $fs_h5_tab; }
+	@include lap { font-size: $fs_h5_lap; }
+}
+
+h6, .H6_Style {
+	font-family: $helveticaNeue_roman;
+	font-size: $fs_h6_mob;
+	@include tab { font-size: $fs_h6_tab; }
+	@include lap { font-size: $fs_h6_lap; }
+}
+
+
+p, .P_Style {
+	font-size: $fs_p_mob;
+	@include tab { font-size: $fs_p_tab; }
+	@include lap { font-size: $fs_p_lap; }
+}

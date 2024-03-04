@@ -1,0 +1,11 @@
+@use '../../../sass/abstracts/' as *;
+
+.Text_Cont {
+  p {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
