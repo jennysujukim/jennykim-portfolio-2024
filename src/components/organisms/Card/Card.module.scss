@@ -1,0 +1,150 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  padding-bottom: 6rem;
+  width: 100%;
+  max-width: 700px;
+  @include tab { padding-bottom: 9rem; }
+  @include lap { 
+    max-width: unset;
+    padding-bottom: 8rem;
+  }
+}
+
+.Title {
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  @include tab { font-size: 1.5rem; }
+}
+
+.Discipline {
+  font-size: 0.8rem;
+  color: $primary_grey;
+  @include tab { font-size: 1rem; };
+}
+
+.Type {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.Image_Cont {
+  width: 100%;
+  background: $secondary_grey;
+  @include flexbox(center, center);
+  margin: 1.5rem 0;
+  overflow: hidden;
+  @include lap { 
+    height: unset; 
+    max-height: 600px;
+  }
+
+  img { width: 80%; }
+}
+
+.Details_Cont {
+  border-top: $border_primary_black;
+  border-bottom: $border_primary_black;
+  padding: 1rem 0;
+  @include tab {
+    @include flexbox(space-between, flex-start);
+    gap: 1rem;
+  }
+}
+
+.Detail_Wrapper {
+  margin-bottom: 1.5rem;
+  @include tab { 
+    margin-bottom: unset; 
+    flex: 1;
+  }
+}
+
+.Detail_Cont {
+  margin-bottom: 0.7rem;
+}
+
+.Detail_Title {
+  text-transform: uppercase;
+  font-family: $helveticaNeue_medium;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.Lists_Wrapper {
+  border-bottom: 1px solid $primary_grey;
+  position: relative;
+  overflow: hidden;
+  @include lap { margin-bottom: unset; };
+
+  &:hover {
+    .Lists_Bg { 
+      transform: translate(0, 0); 
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .Lists_Sub_Cont {
+      @include lap {
+        transform: translate(calc(50px + 1rem), 0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    .Lists_Title_Cont {
+      @include lap {
+        transform: translate(0, 0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.Lists_Bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: $secondary_grey;
+  transform: translate(0, 100%);
+}
+
+.Lists_Cont {
+  @include flexbox(unset, unset, column);
+  padding: 0.7rem 0.5rem;
+  @include lap { 
+    padding: 1rem 0.7rem;
+    @include flexbox(space-between, center, row); 
+  };
+}
+
+.Lists_Title_Cont {
+  order: 2;
+  margin-bottom: 0.5rem;
+  @include lap { 
+    order: unset;
+    margin-bottom: unset;
+    @include flexbox(flex-start, center);
+    transform: translate(calc(-50px - 1rem), 0);
+  }
+};
+
+.Lists_Sub_Cont { 
+  @include lap { @include flexbox(flex-end, center); }
+}
+
+.Lists_Sub_Arrow { 
+  display: none;
+  @include lap {
+    display: block;
+    margin-left: 1rem; 
+  }
+}
+
+.Lists_Title_Arrow { 
+  display: none;
+  @include lap {
+    display: block;
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include flexbox(space-between, flex-start);
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.Title {
+  font-size: 1.4rem;
+}
+
+.Year {
+  font-size: 1.4rem;
+  color: $primary_grey;
+}

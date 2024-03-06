@@ -1,0 +1,6 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  @include flexbox(flex-start, center, column);
+  @include lap { display: block; }
+}
