@@ -8,6 +8,7 @@ import CtaButton from '../../atoms/CtaButton'
 import InlineLinking from '../../atoms/InlineLinking';
 import Highlight from '../../atoms/Highlight';
 import UpRightButton from '../../atoms/UpRightButton';
+import SubTitle from '../../atoms/SubTitle';
 // styles
 import styles from './Footer.module.scss'
 
@@ -50,7 +51,7 @@ export default function Footer() {
         </div>
         <div className={styles.Content_Cont}>
           <div className={styles.Info_Cont}>
-            <p className={`H5_Style ${styles.Title}`}>Thanks for visiting!</p>
+            <SubTitle text="Thanks for visiting!" />
             <p className={styles.Info_Text}>
               Currently <Highlight text="seeking a new opportunity" /> with a company that influences positivity, loves tackling problems with a dash of creativity.
             </p>
@@ -62,7 +63,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <p className={`H5_Style ${styles.Title}`}>Find Me On</p>
+            <SubTitle text="Find Me On" />
             <div className={styles.Social_Cta_Cont}>
               <UpRightButton 
                 text="GitHub"
@@ -79,7 +80,7 @@ export default function Footer() {
                 href="https://www.instagram.com/jklemonjuice/"
                 isExternal={true}
               />
-            </div>
+            S</div>
           </div>
         </div>
         <div className={styles.Copy_Cont}>

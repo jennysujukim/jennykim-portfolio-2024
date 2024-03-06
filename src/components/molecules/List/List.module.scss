@@ -1,0 +1,9 @@
+@use '../../../sass/abstracts/' as *;
+
+.Wrapper {
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

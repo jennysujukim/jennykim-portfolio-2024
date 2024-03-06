@@ -13,25 +13,25 @@ export default function Filter() {
     <ul className={styles.Wrapper}>
       <Tab 
         text={DisciplineType.All}
-        isLink={false}
+        isFilter
         handleClick={() => handleSetDiscipline(DisciplineType.All)}
         isActive={isActive === DisciplineType.All}
       />
       <Tab 
         text={DisciplineType.Frontend}
-        isLink={false}
+        isFilter
         handleClick={() => handleSetDiscipline(DisciplineType.Frontend)}
         isActive={isActive === DisciplineType.Frontend}
       />
       <Tab 
         text={DisciplineType.UIUX}
-        isLink={false}
+        isFilter
         handleClick={() => handleSetDiscipline(DisciplineType.UIUX)}
         isActive={isActive === DisciplineType.UIUX}
       />
       <Tab 
         text={DisciplineType.Graphic}
-        isLink={false}
+        isFilter
         handleClick={() => handleSetDiscipline(DisciplineType.Graphic)}
         isActive={isActive === DisciplineType.Graphic}
       />

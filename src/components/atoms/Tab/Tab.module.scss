@@ -15,6 +15,11 @@
   @include lap { @include gridCol(auto, 3); };
 
   &.Active { border-bottom: 1px solid $primary_blue_dark; }
+
+  &.NotLink { 
+    cursor: default; 
+    border-bottom: $border_primary_black;
+  }
 }
 
 .SmallText {
@@ -24,6 +29,8 @@
   }
 
   &.Active { color: $primary_blue_dark; };
+
+  &.NotLink { color: $primary_black; };
 }
 
 .Container {
@@ -45,6 +52,12 @@
   color: $primary_grey;
 
   &.Active { color: $primary_blue_dark; };
+
+  &.NotLink { color: $primary_black; };
 }
 
-.Bullet { color: $primary_blue_dark; }
+.Bullet { 
+  color: $primary_blue_dark; 
+
+  &.NotLink { color: $primary_black; };
+}

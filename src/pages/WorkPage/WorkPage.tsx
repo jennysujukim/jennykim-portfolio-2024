@@ -4,7 +4,7 @@ import Filter from "../../components/organisms/Filter"
 import ViewBy from "../../components/organisms/ViewBy"
 import ProjectsContent from "./ProjectsContent"
 // styles
-import styles from './ProjectsPage.module.scss'
+import styles from './WorkPage.module.scss'
 
 export default function WorkPage() {
 

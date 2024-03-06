@@ -6,9 +6,6 @@ import AboutScrollContent from "./AboutScrollContent"
 export default function AboutPage() {
   return (
     <>
-      <section className={`Section`}>
-        <h2>About</h2>
-      </section>
       <StickyLayout 
         stickyContent={<AboutStickyContent />}
         stickyContentSpacing={true}

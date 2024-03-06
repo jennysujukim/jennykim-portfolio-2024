@@ -3,3 +3,8 @@
 .Profile {
   width: 100%;
 }
+
+.Socials_Cont {
+  @include flexbox(flex-start, center);
+  flex-wrap: wrap;
+}
