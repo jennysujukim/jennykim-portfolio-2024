@@ -8,7 +8,7 @@ export default function AboutPage() {
     <>
       <StickyLayout 
         stickyContent={<AboutStickyContent />}
-        stickyContentSpacing={true}
+        stickyContentSpacing={false}
         scrollContent={<AboutScrollContent />}
         scrollContentSpacing={true}
       />

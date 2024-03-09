@@ -6,17 +6,19 @@ import styles from './List.module.scss'
 
 type ListProps = {
   tabText: string;
+  isContainer?: boolean;
   listItems: {
     listItemTitle: string;
-    listItemSubtitle: string;
+    listItemSubtitle?: string;
     listItemYear?: string;
-    listItemDescription?: string;
+    listItemKeywords?: string[];
   }[] 
 }
 
 export default function List({ 
   tabText,
-  listItems }: ListProps) {
+  listItems,
+  isContainer }: ListProps) {
 
   return (
     <div className={styles.Wrapper}>
@@ -25,15 +27,18 @@ export default function List({
         isActive={true}
         isTab
       />
-      {listItems && listItems.map((listItem, index) => (
-        <ListItem 
-          title={listItem.listItemTitle}
-          subtitle={listItem.listItemSubtitle}
-          year={listItem.listItemYear}
-          description={listItem.listItemDescription}
-          key={index}
-        />
-      ))}
+      <div className={ isContainer ? styles.ListItems_Cont : '' }>
+        {listItems && listItems.map((listItem, index) => (
+          <ListItem 
+            title={listItem.listItemTitle}
+            subtitle={listItem.listItemSubtitle}
+            keywords={listItem.listItemKeywords}
+            year={listItem.listItemYear}
+            isContainer={isContainer}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   )
 }

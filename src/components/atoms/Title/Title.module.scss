@@ -1,0 +1,6 @@
+@use '../../../sass/abstracts/' as *;
+
+.Title {
+  text-align: center;
+  @include lap { text-align: unset; };
+}

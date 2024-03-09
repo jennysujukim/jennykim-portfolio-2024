@@ -1,11 +1,21 @@
 @use '../../../sass/abstracts/' as *;
 
 .Text_Cont {
+  margin-bottom: $section_spacing_mob;
+  @include tab { margin-bottom: $section_spacing_tab; };
+  @include lap { margin-bottom: unset; };
+
   p {
     margin-bottom: 1rem;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    &:last-child { margin-bottom: 0; }
   }
+}
+
+.Value_Cont {
+  @include grid(repeat(8, 1fr), $gap_lap);
+}
+
+.Value_Text {
+  @include gridCol(auto, 5);
 }
