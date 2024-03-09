@@ -7,3 +7,8 @@
     margin-bottom: 0;
   }
 }
+
+.ListItems_Cont {
+  @include grid(repeat(2, 1fr), 1rem);
+  row-gap: 1rem;
+}

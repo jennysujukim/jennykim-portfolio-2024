@@ -1,8 +1,10 @@
 // components
 import Highlight from '../../../components/atoms/Highlight'
 import List from '../../../components/molecules/List'
+import Title from '../../../components/atoms/Title'
 // styles
 import styles from './AboutScrollContent.module.scss'
+
 
 export default function AboutScrollContent() {
 
@@ -13,11 +15,11 @@ export default function AboutScrollContent() {
   ]
 
   const expertisesAndSkillsListItems = [
-    { listItemTitle: "Frontend Development", listItemSubtitle: "HTML, CSS" },
-    { listItemTitle: "Web Design", listItemSubtitle: "HTML, CSS" },
-    { listItemTitle: "UIUX Design", listItemSubtitle: "HTML, CSS" },
-    { listItemTitle: "Graphic Visual Design", listItemSubtitle: "HTML, CSS" },
-    { listItemTitle: "Digital Marketing", listItemSubtitle: "HTML, CSS" }
+    { listItemTitle: "Frontend Development", listItemKeywords: [ "HTML", "CSS", "JavaScript", "TypeScript", "ReactJS", "NextJS", "Redux", "WordPress", "Webflow", "SASS", "TailwindCSS", "Material UI", "Bootstrap", "REST API", "Headless CMS" ] },
+    { listItemTitle: "Web Design", listItemKeywords: [ "Figma", "Adobe XD" ] },
+    { listItemTitle: "UIUX Design", listItemKeywords: [ "HTML", "CSS" ] },
+    { listItemTitle: "Graphic Visual Design", listItemKeywords: [ "Photoshop", "Illustrator", "InDesign", "After Effect", "Dimension", "Premier Pro", "Final Cut Pro" ] },
+    { listItemTitle: "Digital Marketing", listItemKeywords: [ "Social Media Management", "Marketing Campaign", "Marketing Research",  ] }
   ]
 
   const educationListItems = [
@@ -28,32 +30,21 @@ export default function AboutScrollContent() {
   return ( 
     <>
       <section>
-        <h2>Hi, There! I'm Jenny :)</h2>
+        <Title 
+          text="Hi there 👋 I'm Jenny :)"
+          textCenter
+        />
         <div className={`Section ${styles.Text_Cont}`}>
           <p>
             I am a passionate <Highlight text="frontend developer & UIUX designer" /> with a strong emphasis on interactivity and user-centred design. I discovered my passion for technology during my time in the fashion industry as a digital marketer. I taught myself to code and design web products, continuously developing my skillsets to deliver <Highlight text="seamless interactive experience." />
           </p>
           <p>
-            Currently, I work as a freelancer to help clients to build their digital existence in line with their business goal and objectives. I offer the design thinking and suggest the feasible solution to reach business’s requirement.
+            Currently, I work as a freelancer to help clients to build their digital existence in line with their business goal and objectives. I offer the design thinking and suggest the feasible solution to reach business’s requirement. At the same time, I am looking for the full-time opportunity to dedicate my skillset to the company where aligns with my future goal.
+          </p>
+          <p>
+            When I'm off, you can find me at the squash court or judo gym, training F45, and enjoying good cup of coffee. I am always open to new opportunities and challenges, so feel free to reach out to me!
           </p>
         </div>
-      </section>
-      <section className={`Section ${styles.Text_Cont}`}>
-        <h4 className="Section">Learn, Create, and Repeate.</h4>
-        <div>
-          <div>
-            
-          </div>
-          <div>
-            <p>
-              At the same time, I am looking for the full-time opportunity to dedicate my skillset to the company where aligns with my future goal.
-            </p>
-            <p>
-              I love everything that has to do with product design, web projects as well as digital marketing and animations. With my solid knowledge and proactive learning mindset towards digital products, I know how to help clients solve real business cases and grow their businesses by using design thinking. 
-            </p>
-          </div>
-        </div>
-
       </section>
       <section className="Section">
         <List 
@@ -63,6 +54,7 @@ export default function AboutScrollContent() {
         <List 
           tabText="Expertises & Skills"
           listItems={expertisesAndSkillsListItems}
+          isContainer
         />
         <List 
           tabText="Education"

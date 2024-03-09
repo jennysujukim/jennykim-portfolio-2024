@@ -1,10 +1,35 @@
 @use '../../../sass/abstracts/' as *;
 
+.Wrapper {
+  padding-top: $section_spacing_mob;
+  @include tab { padding-top: $section_spacing_tab; };
+  @include lap { padding-top: unset; };
+}
+
+.Profile_Cont {
+  overflow: hidden;
+  @include flexbox(center, center);
+  @include lap { 
+    display: block;
+  }
+}
+
 .Profile {
-  width: 100%;
+  width: $graphic_tab;
+  height: $graphic_tab;
+  @include lap {
+    width: 100%;
+    height: unset;
+  }
 }
 
 .Socials_Cont {
-  @include flexbox(flex-start, center);
+  @include flexbox(center, center);
+  margin-top: 2rem;
   flex-wrap: wrap;
+  @include lap {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+
 }

@@ -5,6 +5,7 @@ $primary_grey: #6f6f6f;
 $primary_grey_dark: #ababab;
 $secondary_grey_dark: #e0e0e0;
 $secondary_grey: #efefef;
+$secondary_grey_light: #f9f9f9;
 $primary_blue: #0179ff;
 $primary_blue_dark: #0179ff;
 //$primary_blue: #5ea9fc;
@@ -29,7 +30,7 @@ $helveticaNeue_heavy: 'HelveticaNeue-Heavy', sans-serif;
 // FONT SIZES //
 $fs_h2_mob: 1.5rem;
 $fs_h2_tab: 2rem;
-$fs_h2_lap: 2.8rem;
+$fs_h2_lap: 3rem;
 
 $fs_h3_mob: 1.25rem;
 $fs_h3_tab: 1.5rem;
@@ -88,6 +89,7 @@ $stickyContainer_width_lap: calc($mainContent_full_width_lap * 0.3);
 $stickyContainer_width_deskLg: 514px;
 
 $graphic_mob: 200px; 
+$graphic_tab: 300px;
 
 // SOLID BORDER //
 $border_primary_black: 1px solid $primary_black;

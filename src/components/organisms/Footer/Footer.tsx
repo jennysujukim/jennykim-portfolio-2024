@@ -80,7 +80,7 @@ export default function Footer() {
                 href="https://www.instagram.com/jklemonjuice/"
                 isExternal={true}
               />
-            S</div>
+            </div>
           </div>
         </div>
         <div className={styles.Copy_Cont}>

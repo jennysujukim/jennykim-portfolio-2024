@@ -9,15 +9,14 @@ import styles from './AboutStickyContent.module.scss'
 export default function AboutStickyContent() {
   return (
     <>
-      <section>
-        <img 
-          className={styles.Profile}
-          src={profile}
-          alt="Jenny Kim Profile"
-        />
-      </section>
-      <section>
-        <SubTitle text="Socials" />
+      <section className={styles.Wrapper}>
+        <div className={styles.Profile_Cont}>
+          <img 
+            className={styles.Profile}
+            src={profile}
+            alt="Jenny Kim Profile"
+          />
+        </div>
         <div className={styles.Socials_Cont}>
           <UpRightButton 
             text="GitHub"
@@ -41,7 +40,7 @@ export default function AboutStickyContent() {
           />
         </div>
         <div>
-
+          <SubTitle text="" />
         </div>
       </section>
     </>

@@ -1,19 +1,48 @@
 @use '../../../sass/abstracts/' as *;
 
 .Wrapper {
-  @include flexbox(space-between, flex-start);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  @include tab { @include flexbox(space-between, flex-start); };
+  @include lap { margin-bottom: 1.5rem; };
 
-  &:last-child {
-    margin-bottom: 0;
+  &:last-child { margin-bottom: 0; }
+
+  &_Container {
+    @include gridCol(auto, 2);
+    background-color: $secondary_grey_light;
+    padding: 1rem;
+    border-radius: 10px;
+    @include tab { @include gridCol(auto, 1); };
   }
 }
 
 .Title {
-  font-size: 1.4rem;
+  font-size: 1rem;
+  @include tab { font-size: 1.2rem; };
+  @include lap { font-size: 1.4rem; };
+  
+}
+
+.Keywords_Cont {
+  margin-top: 0.5rem;
+  @include flexbox(flex-start, flex-start);
+  flex-wrap: wrap;
+}
+
+.Keyword {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
 }
 
 .Year {
-  font-size: 1.4rem;
+  font-size: $fs_p_mob;
   color: $primary_grey;
+  margin-top: 0.5rem;
+  
+  @include tab { 
+    margin-top: unset;
+    font-size: 1.2rem; 
+    text-align: right;
+  };
+  @include lap { font-size: 1.4rem; };
 }

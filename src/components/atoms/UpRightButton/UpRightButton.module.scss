@@ -1,10 +1,11 @@
 @use '../../../sass/abstracts/' as *;
 
 .Container {
-  margin-right: 1.5rem;
   overflow: hidden;
   position: relative;
-  @include lap { font-size: 1.5rem;  };
+  margin-right: 1rem;
+  @include tab { margin-right: 1.5rem; };
+  @include lap { font-size: 1.4rem; };
 
   &:hover { color: $primary_blue_dark; }
 
